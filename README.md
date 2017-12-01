@@ -42,3 +42,4 @@
 
 ### Compile-time DI
 
+[https://github.com/playframework/play-scala-rest-api-example](https://github.com/playframework/play-scala-rest-api-example)
