@@ -32,7 +32,7 @@
 
 ## Play MVC Framework
 
-### Hollo world example
+### Hello world example
 
 ### Database/ORM interaction
 
