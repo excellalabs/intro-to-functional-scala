@@ -34,6 +34,10 @@
 
 ### Hello world example
 
+### Using Play's Actions
+
+### Setting up Routing
+
 ### Database/ORM interaction
 
 ### Comet/SSE Events
