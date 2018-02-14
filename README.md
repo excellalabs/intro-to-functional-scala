@@ -1,24 +1,24 @@
 # intro-to-functional-scala
 
-## Functional programming
+## Chapter 1 - Functional programming
 
-### Why functional programming?
+### Section 1.1 - Why functional programming?
 
-### Getting started
+### Section 1.2 - Getting started
 
-### Data Structures
+### Section 1.3 - Data Structures
 
-### Exceptions without Errors
+### Section 1.4 - Exceptions without Errors
 
-### Handling state
+### Section 1.5 - Handling state
 
-## Scala
+## Chapter 2 - Scala
 
-### Intro
+### Section 2. 1 - Intro
 
-### Using collections
+### Section 2. 2 - Using collections
 
-### Pattern matching
+### Section 2. 3 - Pattern matching
 
 For those not familiar with pattern matching, think of it as an eloquent, more advanced/useful switch statement. Pattern matching can be used to match more than just primitives. Pattern matching can match on custom types and can even extract from tuples or case classes. In a basic example below, we created the case class "Player", which consists of two fields: a number, and the player name. We created an instance of that class and matched on cases where the player's number is 20 and print the name.
 
@@ -47,30 +47,29 @@ This is a basic introduction of Pattern Matching in Scala. For more information,
 
 [https://docs.scala-lang.org/tour/pattern-matching.html](https://docs.scala-lang.org/tour/pattern-matching.html)
 
-### Composing functions
+### Section 2. 4 - Composing functions
 
-### Polymorphism and types
+### Section 2. 5 - Polymorphism and types
 
-### Concurrency
+### Section 2. 6 - Concurrency
 
-### Testing: Scalatest and Specs
+### Section 2. 7 - Testing: Scalatest and Specs
 
-### Using SBT
+### Section 2. 8 - Using SBT
 
-## Play MVC Framework
+## Chapter 3 - Play MVC Framework
 
-### Hello world example
+### Section 3.1 - Play Hello World
 
-### Using Play's Actions
+### Section 3.2 - Play with React
 
-### Setting up Routing
+### Section 3.3 - Play with Slick Evolutions
 
-### Database/ORM interaction
+### Section 3.4 - Play with SSE
 
-### Comet/SSE Events
-
-### Websockets Example
+### Section 3.5 - Play with Websockets
 
 ### Compile-time DI
 
 [https://github.com/playframework/play-scala-rest-api-example](https://github.com/playframework/play-scala-rest-api-example)
+
