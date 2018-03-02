@@ -79,9 +79,10 @@ defined class JsNumber
 
 scala> case object JsNull extends Json
 defined object JsNull
-
-scala> //Type Class
-     | trait JsonWriter[A] {
+```
+```//Type Class```
+```scala
+scala> trait JsonWriter[A] {
      |   def write(value: A): Json
      | }
 defined trait JsonWriter
@@ -89,12 +90,12 @@ defined trait JsonWriter
 
 The type class instances provide implementations for the types we want to add functionality to. Say we want to be able to serialize a case class representing a person.
 
+```//the instance```
 ```scala
 scala> final case class Person(name: String, address: String)
 defined class Person
 
-scala> //the instance
-     | object JsonWriterInstances {
+scala> object JsonWriterInstances {
      | 	implicit val stringWriter: JsonWriter[String] = new JsonWriter[String] {
      | 	def write(value: String): Json = JsString(value)
      | 	}
@@ -104,7 +105,7 @@ scala> //the instance
      | 		JsObject(Map("name" -> JsString(value.name), "address" -> JsString(value.address)))
      | 	}
 ```
-Finally the interface methods
+```//Finally the interface methods```
 ```scala
      | object JsonInterface {
      | 	implicit class JsonWriterOps[A](value: A) {
@@ -113,7 +114,7 @@ Finally the interface methods
      | }
 ```
 
-Putting it all together...
+`Putting it all together`
 ```scala
      | import JsonWriterInstances._
      | import JsonInterface._
