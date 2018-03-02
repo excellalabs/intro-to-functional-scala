@@ -51,6 +51,80 @@ This is a basic introduction of Pattern Matching in Scala. For more information,
 
 ### Section 2. 5 - Polymorphism and types
 
+### Section 2.6  - Type Classes
+
+Type Classes are  constructs that allow us to add ad-hoc polymorphism. Type Classes are not a native construct and are not obviously recongnizable but you might have worked with them.
+
+A Type Class is a group of classes that satisfy a contract provided by a trait. Type Classes allow us to add functionality to an existing class without modifying it. Type Classes in scala are composed of three parts
+*The type class
+*The instances for the various types
+*The interface methods that are exposed to the outside world
+
+Consider an ADT that represents JSON structures.
+
+
+
+```scala
+scala> sealed trait Json
+defined trait Json
+
+scala> final case class JsObject(get: Map[String, Json]) extends Json 
+defined class JsObject
+
+scala> final case class JsString(get: String) extends Json
+defined class JsString
+
+scala> final case class JsNumber(get: Double) extends Json
+defined class JsNumber
+
+scala> case object JsNull extends Json
+defined object JsNull
+
+scala> //Type Class
+     | trait JsonWriter[A] {
+     |   def write(value: A): Json
+     | }
+defined trait JsonWriter
+```
+
+The type class instances provide implementations for the types we want to add functionality to. Say we want to be able to serialize a case class representing a person.
+
+```scala
+scala> final case class Person(name: String, address: String)
+defined class Person
+
+scala> //the instance
+     | object JsonWriterInstances {
+     | 	implicit val stringWriter: JsonWriter[String] = new JsonWriter[String] {
+     | 	def write(value: String): Json = JsString(value)
+     | 	}
+     | 
+     | 	implicit val personWriter: JsonWriter[Person] = new JsonWriter[Person] {
+     | 		def write(value: Person): Json = 
+     | 		JsObject(Map("name" -> JsString(value.name), "address" -> JsString(value.address)))
+     | 	}
+```
+Finally the interface methods
+```scala
+     | object JsonInterface {
+     | 	implicit class JsonWriterOps[A](value: A) {
+     | 	def toJson(implicit w: JsonWriter[A]): Json = w.write()
+     | 	}
+     | }
+```
+
+Putting it all together...
+```scala
+     | import JsonWriterInstances._
+     | import JsonInterface._
+     | 
+     | Person("Homer", "742 Evergreen Terrace").toJson
+```
+
+
+
+
+
 ### Section 2. 6 - Concurrency
 
 ### Section 2. 7 - Testing: Scalatest and Specs
