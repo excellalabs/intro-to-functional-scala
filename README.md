@@ -53,12 +53,13 @@ This is a basic introduction of Pattern Matching in Scala. For more information,
 
 ### Section 2.6  - Type Classes
 
-Type Classes are  constructs that allow us to add ad-hoc polymorphism. Type Classes are not a native construct and are not obviously recongnizable but you might have worked with them.
+Type classes are  constructs that allow us to add ad-hoc polymorphism. Type classes are not a native construct and are not obviously recongnizable but you might have worked with them.
 
-A Type Class is a group of classes that satisfy a contract provided by a trait. Type Classes allow us to add functionality to an existing class without modifying it. Type Classes in scala are composed of three parts
-*The type class
-*The instances for the various types
-*The interface methods that are exposed to the outside world
+A type class is a group of classes that satisfy a contract provided by a trait. They allow us to add functionality to an existing class without any modifications. 
+Type Classes in scala are composed of three parts
+* The type class
+* The instances for the various types
+* The interface methods that are exposed to the outside world
 
 Consider an ADT that represents JSON structures.
 
