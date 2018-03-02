@@ -53,10 +53,9 @@ This is a basic introduction of Pattern Matching in Scala. For more information,
 
 ### Section 2.6  - Type Classes
 
-Type classes are  constructs that allow us to add ad-hoc polymorphism. Type classes are not a native construct and are not obviously recongnizable but you might have worked with them.
+Type Classes are  constructs that allow us to add ad-hoc polymorphism. Type Classes are not a native construct and are not obviously recongnizable but you might have worked with them.
 
-A type class is a group of classes that satisfy a contract provided by a trait. They allow us to add functionality to an existing class without any modifications. 
-Type Classes in scala are composed of three parts
+A Type Class is a group of classes that satisfy a contract provided by a trait. Type Classes allow us to add functionality to an existing class without modifying it. Type Classes in scala are composed of three parts
 * The type class
 * The instances for the various types
 * The interface methods that are exposed to the outside world
@@ -69,7 +68,7 @@ Consider an ADT that represents JSON structures.
 scala> sealed trait Json
 defined trait Json
 
-scala> final case class JsObject(get: Map[String, Json]) extends Json 
+scala> final case class JsObject(get: Map[String, Json]) extends Json
 defined class JsObject
 
 scala> final case class JsString(get: String) extends Json
@@ -97,30 +96,37 @@ scala> final case class Person(name: String, address: String)
 defined class Person
 
 scala> object JsonWriterInstances {
-     | 	implicit val stringWriter: JsonWriter[String] = new JsonWriter[String] {
-     | 	def write(value: String): Json = JsString(value)
-     | 	}
+     |   implicit val stringWriter: JsonWriter[String] = new JsonWriter[String] {
+     |     def write(value: String): Json = JsString(value)
+     |   }
      | 
-     | 	implicit val personWriter: JsonWriter[Person] = new JsonWriter[Person] {
-     | 		def write(value: Person): Json = 
-     | 		JsObject(Map("name" -> JsString(value.name), "address" -> JsString(value.address)))
-     | 	}
+     |   implicit val personWriter: JsonWriter[Person] = new JsonWriter[Person] {
+     |     def write(value: Person): Json =
+     |       JsObject(Map("name" -> JsString(value.name), "address" -> JsString(value.address)))
+     |   }
+     | }
+defined object JsonWriterInstances
 ```
 ```//Finally the interface methods```
 ```scala
-     | object JsonInterface {
-     | 	implicit class JsonWriterOps[A](value: A) {
-     | 	def toJson(implicit w: JsonWriter[A]): Json = w.write()
-     | 	}
-     | }
+scala> object JsonInterface {
+     | 	 implicit class JsonWriterOps[A](value: A) {
+     |       def toJson(implicit w: JsonWriter[A]): Json = w.write(value)
+     |     }
+     |   }
+defined object JsonInterface
 ```
 
-`Putting it all together`
+```//Putting it all together```
 ```scala
-     | import JsonWriterInstances._
-     | import JsonInterface._
-     | 
-     | Person("Homer", "742 Evergreen Terrace").toJson
+scala> import JsonWriterInstances._
+import JsonWriterInstances._
+
+scala> import JsonInterface._
+import JsonInterface._
+
+scala> Person("Homer", "742 Evergreen Terrace").toJson
+res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Evergreen Terrace)))
 ```
 
 
