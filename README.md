@@ -1,5 +1,7 @@
 # intro-to-functional-scala
 
+[Curriculum Outline](README-outline.md)
+
 ## Chapter 1 - Functional programming
 
 ### Section 1.1 - Why functional programming?
