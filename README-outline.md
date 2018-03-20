@@ -1,6 +1,6 @@
-## Key Concepts 
+## Key Concepts
 
-Key Concepts:
+Scala:
 
 - Functions & Evaluation
   - Functional vs. imperative
@@ -20,7 +20,21 @@ Key Concepts:
   - Pattern matching
 - Abstractions for concurrency (i.e. futures, semaphores, actors)
 
-## Steps
+Play:
+
+  - Slick functional relational mapper (FRM)
+    - Work with data almost as if using Scala collections
+    - Full control over when database access happens and what data is transferred
+    - Can use SQL directly
+    - Database actions are executed asynchronously so good for reactive apps based on Play & Akka
+  - Anom
+  - EBean
+  - Comet
+  - WebSocket
+  - Kalium cryptography
+  - compile time DI
+
+## Learning Steps
 
 ### 1: Preliminary Concepts & Scala Foundation
 
@@ -30,7 +44,12 @@ Key Concepts:
 1. Scala for the Impatient? (book)
 1. [Scala exercises](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
 
-REF: https://getpocket.com/a/queue/grid/curric%20-%20scala/
+### Play 
+
+1. [Play web framework tutorials](https://www.playframework.com/documentation/2.6.x/Tutorials) - including for Slick, JPA, Anom, EBean, Comet, WebSocket, Kalium cryptography, compile time DI
+- [Play Hello World tutorial](https://www.playframework.com/documentation/1.3.0-RC1/firstapp) 
+  - [Play starter example](https://github.com/playframework/play-scala-starter-example)
+1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
 
 ### 2: In-depth Learning
 
