@@ -1,4 +1,4 @@
-Key Concepts
+## Key Concepts
 
 Scala:
 
@@ -50,6 +50,7 @@ Play:
 1. [Play Hello World tutorial](https://www.playframework.com/documentation/1.3.0-RC1/firstapp) 
   - [Play starter example](https://github.com/playframework/play-scala-starter-example)
 1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
+
 ### 2: In-depth Learning
 
 - Coursera Course
