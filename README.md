@@ -141,6 +141,10 @@ res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Everg
 
 ### Section 2. 8 - Using SBT
 
+
+
+https://twitter.github.io/scala_school/sbt.html
+
 ## Chapter 3 - Play MVC Framework
 
 ### Section 3.1 - Play Hello World
