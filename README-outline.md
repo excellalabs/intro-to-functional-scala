@@ -44,14 +44,17 @@ Play:
 1. Scala for the Impatient? (book)
 1. [Scala exercises](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
 
-### Play 
+### 2: Play 
 
 1. [Play web framework tutorials](https://www.playframework.com/documentation/2.6.x/Tutorials) - including for Slick, JPA, Anom, EBean, Comet, WebSocket, Kalium cryptography, compile time DI
 1. [Play Hello World tutorial](https://www.playframework.com/documentation/1.3.0-RC1/firstapp) 
-  - [Play starter example](https://github.com/playframework/play-scala-starter-example)
-1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
 
-### 2: In-depth Learning
+  Additional examples: 
+
+  1. [Play starter example](https://github.com/playframework/play-scala-starter-example)
+  1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
+
+### 3: In-depth Learning
 
 - Coursera Course
 - [Get the most out of Scala with Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala)
