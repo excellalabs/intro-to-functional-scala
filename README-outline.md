@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 ## Key Concepts
 
 Scala:
+=======
+## Key Concepts 
+
+Key Concepts:
+>>>>>>> 3cc3f27f3d62bccb8be73228fe585d789e5ca547
 
 - Functions & Evaluation
   - Functional vs. imperative
@@ -20,6 +26,7 @@ Scala:
   - Pattern matching
 - Abstractions for concurrency (i.e. futures, semaphores, actors)
 
+<<<<<<< HEAD
 Play:
 
   - Slick functional relational mapper (FRM)
@@ -35,6 +42,9 @@ Play:
   - compile time DI
 
 ## Learning Steps
+=======
+## Steps
+>>>>>>> 3cc3f27f3d62bccb8be73228fe585d789e5ca547
 
 ### 1: Preliminary Concepts & Scala Foundation
 
@@ -44,12 +54,16 @@ Play:
 1. Scala for the Impatient? (book)
 1. [Scala exercises](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
 
+<<<<<<< HEAD
 ### Play 
 
 1. [Play web framework tutorials](https://www.playframework.com/documentation/2.6.x/Tutorials) - including for Slick, JPA, Anom, EBean, Comet, WebSocket, Kalium cryptography, compile time DI
 - [Play Hello World tutorial](https://www.playframework.com/documentation/1.3.0-RC1/firstapp) 
   - [Play starter example](https://github.com/playframework/play-scala-starter-example)
 1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
+=======
+REF: https://getpocket.com/a/queue/grid/curric%20-%20scala/
+>>>>>>> 3cc3f27f3d62bccb8be73228fe585d789e5ca547
 
 ### 2: In-depth Learning
 
