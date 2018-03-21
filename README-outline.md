@@ -61,8 +61,9 @@ Play:
 
 ## Other Resources
 
-### Examples 
+### Walkthroughs
 
+- `Option`, `Future`, and `Try` are important to focus on
 - [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
 - [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
 
