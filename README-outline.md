@@ -54,18 +54,16 @@ Play:
   1. [Play starter example](https://github.com/playframework/play-scala-starter-example)
   1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
 
-### 3: In-depth Learning
-
-- Coursera Course
-- [Get the most out of Scala with Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala)
-
-## Other Resources
-
-### Walkthroughs
+### 3. Walkthroughs
 
 - `Option`, `Future`, and `Try` are important to focus on
 - [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
 - [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
+
+### 4: In-depth Learning
+
+- Coursera Course
+- [Get the most out of Scala with Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala)
 
 ### Other Key Resources
 
