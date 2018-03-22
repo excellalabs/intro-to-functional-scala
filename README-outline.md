@@ -22,7 +22,7 @@ Scala:
 
 Play:
 
-Open-source scalable web framework in Scala or Java, based on a lightweight, stateless web-friendly architecture & built on Akka.
+Open-source scalable web framework in Scala or Java (JVM), based on a lightweight, stateless web-friendly architecture & built on Akka. Predictable & minimal resource consumption.
 
   - Slick functional relational mapper (FRM)
     - Work with data almost as if using Scala collections
