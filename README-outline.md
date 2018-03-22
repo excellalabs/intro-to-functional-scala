@@ -43,6 +43,7 @@ Play:
 1. [Fundamentals First (video)](https://www.youtube.com/watch?v=ugHsIj60VfQ)
 1. Scala for the Impatient? (book)
 1. [Scala exercises](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
+1. [Neophyte's Guide to Scala](http://danielwestheide.com/scala/neophytes.html)
 1. [Twitter Scala School](https://twitter.github.io/scala_school/)
 
 ### 2: Play 
