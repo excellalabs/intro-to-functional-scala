@@ -194,9 +194,9 @@ Moar Commands
 ##### Managed Dependencies
 (some portions of this taken directly from https://alvinalexander.com/scala/sbt-how-to-manage-project-dependencies-in-scala)
 
-- managed dependencies are dependencies that sbt helps you pull from either the default Maven2 repo or another repo that you have set up a resolver for (more on that later).
+* managed dependencies are dependencies that sbt helps you pull from either the default Maven2 repo or another repo that you have set up a resolver for (more on that later).
 
-- most larger dependencies you pull in you are going to want to treat as managed dependencies, because they will likely have libraries they in turn depend on, which have libraries that they depend on... (transitive dependencies). sbt with the help of ivy sorts all that out for you. 
+* most larger dependencies you pull in you are going to want to treat as managed dependencies, because they will likely have libraries they in turn depend on, which have libraries that they depend on... (transitive dependencies). sbt with the help of ivy sorts all that out for you. 
 
 *adding to your build.sbt* 
 the template for adding a managed dependency is:
@@ -204,9 +204,9 @@ the template for adding a managed dependency is:
 ```
 libraryDependencies += groupID % artifactID % revision % configuration
 ```
-- configuration is optional, allows you to profile which dependencies you want to bring in depending on how you are running your scala code.
+* configuration is optional, allows you to profile which dependencies you want to bring in depending on how you are running your scala code.
 
-- SBT defines a minimal DSL for declaring dependencies which is being used in the above template: 
+* SBT defines a minimal DSL for declaring dependencies which is being used in the above template: 
 
 ```
 += Appends to the key’s value. The build.sbt file works with settings defined as key/value pairs. In the examples shown, libraryDependencies is a key, and it’s shown with several different values.
@@ -214,16 +214,16 @@ libraryDependencies += groupID % artifactID % revision % configuration
 %% When used after the groupID, it automatically adds your project’s Scala version (such as _2.10) to the end of the artifact name.
 ```
 
-- If you haven't used ivy before, you can check where it is keeping your managed dependencies by looking at 
+* If you haven't used ivy before, you can check where it is keeping your managed dependencies by looking at 
 
 ##### Unmanaged Dependencies
 --leaving this to be fleshed out later, cool but we probably won't use them much--
 
 #### Cool Things
 
-    - triggered actions, when you preface a scala task with a tilde e.g. sbt run ~test, it will watch your project source files and perform that action when there is a change, so you can get a quick feedback loop as you develop.
-    - sbt uses a lazy dependency management system, sbt doesn't tell ivy to go get dependencies if the configuration hasn't changed unless you force it to with sbt update, https://www.scala-sbt.org/1.x/docs/Dependency-Management-Flow.html 
-    - the dependency graph that sbt uses for tasks means that sbt determines which tasks it can run in parallel and which need to be run sequentially, optimizing for a very fast task execution
+    * triggered actions, when you preface a scala task with a tilde e.g. sbt run ~test, it will watch your project source files and perform that action when there is a change, so you can get a quick feedback loop as you develop.
+    * sbt uses a lazy dependency management system, sbt doesn't tell ivy to go get dependencies if the configuration hasn't changed unless you force it to with sbt update, https://www.scala-sbt.org/1.x/docs/Dependency-Management-Flow.html 
+    * the dependency graph that sbt uses for tasks means that sbt determines which tasks it can run in parallel and which need to be run sequentially, optimizing for a very fast task execution
     
 #### helpful links
       
