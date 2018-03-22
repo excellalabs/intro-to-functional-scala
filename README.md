@@ -141,6 +141,100 @@ res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Everg
 
 ### Section 2. 8 - Using SBT
 
+#### What is SBT?
+
+    Simple Build Tool is a modernized build tool. It is a general purpose build tool that can be used for building any JVM project, but it is written in scala and it has features built out specifically for scala use.
+    
+##### quick terminology 
+
+    - everything in sbt is either a task or a setting. tasks are things scala does, settings are values you are defining. tasks are scala functions and sbt builds a dependency graph to determine how to execute them.
+    
+#### How do I use it?
+
+##### Bootstrap a new project (this is recommended standard for scala projects using sbt)
+sbt new scala/scala-seed.g8 (creates new scala project from minimal scala template https://www.scala-sbt.org/1.0/docs/sbt-new-and-Templates.html)
+
+this will create a standard directory structure for a minimal scala project, with 
+```
+build.sbt
+src/main/scala/example
+src/test/scala/example
+project/Dependencies.scala
+project/build.properties
+```
+your build.sbt in here already has scalatest added as a managed dependency.
+
+##### Jump into the sbt shell
+
+- inside of an existing sbt project directory you use _sbt_ or _sbt console_ command and it will load up the sbt shell in interactive mode. This is like a scala REPL but you have access to all project source files and dependencies, you can import them.
+
+##### Use it as a build console (here are common commands ripped mostly from twitter scala school
+
+Common Commands
+* run - 
+* actions – show actions available for this project
+* update – downloads dependencies
+* compile – compiles source
+* test – runs tests
+* package – creates a publishable jar file
+* publish-local – installs the built jar in your local ivy cache
+* publish – pushes your jar to a remote repo (if configured)
+Moar Commands
+* test-failed – run any specs that failed
+* test-quick – run any specs that failed and/or had dependencies updated
+* clean-cache – remove all sorts of sbt cached stuff. Like clean for sbt
+* clean-lib – remove everything in lib_managed
+
+##### Dependency Management
+
+- A nice thing about build.sbt is that it is just more scala, so your build configuration is just more of the language you are likely coding in.
+- Every entry in build.sbt boils down to a key value pair where the key is defined in Scala.Keys
+- SBT supports managed and unmanaged dependencies.
+
+##### Managed Dependencies
+(some portions of this taken directly from https://alvinalexander.com/scala/sbt-how-to-manage-project-dependencies-in-scala)
+
+- managed dependencies are dependencies that sbt helps you pull from either the default Maven2 repo or another repo that you have set up a resolver for (more on that later).
+
+- most larger dependencies you pull in you are going to want to treat as managed dependencies, because they will likely have libraries they in turn depend on, which have libraries that they depend on... (transitive dependencies). sbt with the help of ivy sorts all that out for you. 
+
+*adding to your build.sbt* 
+the template for adding a managed dependency is:
+
+```
+libraryDependencies += groupID % artifactID % revision % configuration
+```
+- configuration is optional, allows you to profile which dependencies you want to bring in depending on how you are running your scala code.
+
+- SBT defines a minimal DSL for declaring dependencies which is being used in the above template: 
+
+```
++= Appends to the key’s value. The build.sbt file works with settings defined as key/value pairs. In the examples shown, libraryDependencies is a key, and it’s shown with several different values.
+% A method used to construct an Ivy Module ID from the strings you supply.
+%% When used after the groupID, it automatically adds your project’s Scala version (such as _2.10) to the end of the artifact name.
+```
+
+- If you haven't used ivy before, you can check where it is keeping your managed dependencies by looking at 
+
+##### Unmanaged Dependencies
+--leaving this to be fleshed out later, cool but we probably won't use them much--
+
+#### Cool Things
+
+    - triggered actions, when you preface a scala task with a tilde e.g. sbt run ~test, it will watch your project source files and perform that action when there is a change, so you can get a quick feedback loop as you develop.
+    - sbt uses a lazy dependency management system, sbt doesn't tell ivy to go get dependencies if the configuration hasn't changed unless you force it to with sbt update, https://www.scala-sbt.org/1.x/docs/Dependency-Management-Flow.html 
+    - the dependency graph that sbt uses for tasks means that sbt determines which tasks it can run in parallel and which need to be run sequentially, optimizing for a very fast task execution
+    
+#### helpful links
+      
+   https://github.com/shekhargulati/52-technologies-in-2016/blob/master/02-sbt/README.md - sbt missing manual, good overview of how to think about sbt and what sbt is doing. 
+   https://twitter.github.io/scala_school/sbt.html - the twitter scala code school sbt page. this section pulled a lot from twitter's page, it has an easy to follow tutorial that will get you performing most of the main functions of sbt fast.
+   https://www.scala-sbt.org/release/docs/Basic-Def-Examples.html - a set of helpful build.sbt recipes to tweak configuaration settings.
+   
+#### Other thigns that we could add to SBT seciton
+- adding resolvers for other repositories
+- multi project builds
+
 ## Chapter 3 - Play MVC Framework
 
 ### Section 3.1 - Play Hello World
