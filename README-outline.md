@@ -63,7 +63,7 @@ Play:
 ### 4: In-depth Learning
 
 - Coursera Course
-- [Get the most out of Scala with Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala)
+- [Get the most out of Scala with Functional Programming in Scala (Scala book club used it)](https://www.manning.com/books/functional-programming-in-scala)
 
 ### Other Key Resources
 
