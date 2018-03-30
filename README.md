@@ -1,12 +1,34 @@
 # intro-to-functional-scala
 
-[Curriculum Outline](README-outline.md)
+* [Curriculum Outline](README-outline.md)
 
 ## Chapter 1 - Functional programming
 
+[Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. Case classes and built-in support for patterm matching model algebraic types. Singleton objects project a concenient way to group functions that aren't members of a class.
+
+[Anonymous functions](https://dzone.com/articles/scala-higher-order-and-anonymous-functions) - using a function where it's declared as opposed to declaring it somewhere else first
+
+[Higher-order functions](https://docs.scala-lang.org/tour/higher-order-functions.html) - take other functions as parameters or return a function `map` is a common example. Functions passed as arguments are `callback functions`.
+
+[Currying](https://docs.scala-lang.org/tour/multiple-parameter-lists.html) - when a method is called with a fewer number of paramter lists than it defined, yielding a fucnction taking the missing parameter lists as its arguments
+
+[Case classes](https://docs.scala-lang.org/tour/case-classes.html) - like regular classes that have an apply method by default that takes care of object construction, and are compared by structure, not reference.
+
+[Pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) - a mechanism for checking a value against a pattern. A match can deconstruct the value into parts. More powerful than `switch` and can be used in place of if/else's.
+
+Scala is also object-oriented. [Every value is an object](https://docs.scala-lang.org/tour/unified-types.html) (i.e. functions represented by objects are called function values). Types and behavior of objects are described by classes and traits. Classes are extended by subclassing & a mixin-based composition mechanism as a clean replacement for multiple inheritance.
+
+[Traits](https://docs.scala-lang.org/tour/traits.html) - for sharing interfaces and fields betweemn classes (like Java 8 interfaces). Can be extended by classes and objects but cannot be instantiated so have no parameters.
+
+[Mixin-based compoition](https://docs.scala-lang.org/tour/mixin-class-composition.html) - traits used to compose a class
+
 ### Section 1.1 - Why functional programming?
 
+Scala is a pure object-oriented language in the sense that every value is an object. Types and behavior of objects are described by classes and traits. Classes are extended by subclassing and a flexible mixin-based composition mechanism as a clean replacement for multiple inheritance.
+
 ### Section 1.2 - Getting started
+
+* (Basics of Scala functions)(http://fruzenshtein.com/scala-introduction-to-functions/)
 
 ### Section 1.3 - Data Structures
 
