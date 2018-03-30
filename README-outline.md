@@ -18,7 +18,10 @@ Scala:
   - Scala type system details - generics, subtyping, variance, etc.
   - Lists data structure
   - Pattern matching
-- Abstractions for concurrency (i.e. futures, semaphores, actors)
+- Abstractions for concurrency 
+  - [Futures/promises](README.md#Futures-and-Promises)
+  - semaphores, actors, etc
+- [sbt](README.md#Using-SBT)
 
 Play:
 
