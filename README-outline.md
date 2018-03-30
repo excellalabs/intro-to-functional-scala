@@ -4,7 +4,7 @@ Scala:
 
 - Functions & Evaluation
   - Functional vs. imperative
-  - expressions, evaluation, conditionals, functional loops, functions, tuples, tail recursion, sequence comprehensions
+  - expressions, evaluation, conditionals, functional loops, functions, tuples, tail recursion, sequence comprehensions, comnbinators
 - Higher Order Functions
   - functions as first class values, 
   - Scala syntax and how it's formally defined
