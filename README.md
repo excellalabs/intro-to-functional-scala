@@ -139,34 +139,56 @@ A future is a placeholder object for a value that may not exist yet becuase of a
 
 `Future[T]` is a type which denotes future objects, whereas `Future.apply` is a method which creates and schedules an asynchronous computation, and then returns a future object which will be completed with the result of that computation.
 
+
+
 EXAMPLE: Let’s assume that we want to use a hypothetical API of some popular social network to obtain a list of our recent posts. We will open a new session and then send a request to obtain a list:
+
+It is mde async with a future, and the following lines handle the results:
 
 ```scala
 import scala.concurrent._
 import ExecutionContext.Implicits.global
 
-val session = socialNetwork.createSessionFor("user", credentials)
-val f: Future[List[Friend]] = Future {
-  session.getFriends()
-}
-```
+val connection = ...
 
-- `scala.concurrent` brings in `Future` and the 2nd import brings in the default execution context
-- This is a blocking remote request. 
-
-To make it async with a future, we change the 2 lines to the following. We then added in some lines to handle the results:
-
-```scala
-val session = null
-val f: Future[List[Friend]] = Future {
-  session.getRecentPosts
+val rateQuote = Future {
+  connection.getCurrentValue(USD)
 }
 
-f onComplete {
-  case Success(posts) => for (post <- posts) println(post)
+rateQuote onSuccess { case quote =>
+  val purchase = Future {
+    if (isProfitable(quote)) connection.buy(amount, quote)
+    else throw new Exception("not profitable")
+  }
+
+  purchase onSuccess {
+    case _ => println("Purchased " + amount + " USD")
+  }
   case Failure(t) => println("An error has occured: " + t.getMessage)
 }
 ```
+
+`scala.concurrent` brings in `Future` and the 2nd import brings in the default execution context.
+
+The problems with this approach are nested callbacks are required when doing a subsequent action in the onComplete of the first, and that operation & result is limited within that scope. For these reasons, futures provide combinators such as `map`, which allow a more straightforward composition. `map` will produce a new future with the value mapped from the original when it's completed (not dissimilar to mapping collections).
+
+The above can be done using `map`:
+
+```scala
+val rateQuote = Future {
+  connection.getCurrentValue(USD)
+}
+
+val purchase = rateQuote map { quote =>
+  if (isProfitable(quote)) connection.buy(amount, quote)
+  else throw new Exception("not profitable")
+}
+
+purchase onSuccess {
+  case _ => println("Purchased " + amount + " USD")
+}
+```
+
 
 More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/overviews/core/futures.html)
 
