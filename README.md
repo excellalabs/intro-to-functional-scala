@@ -139,7 +139,7 @@ res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Everg
 
 ##### Futures 
 
-A future is a placeholder object for a value that may not exist yet becuase of an async operation that hasn't yet completed. Callbacks populate the future with the actual value when it's ready. The execution to get said value happens in an `ExecutionContext` - similar to an `Executor`, it can execute computations in a new, pooled or the current (discouraged) thread. Futures are completed when they get the value back from the computation, whether that's the expected value or an exception thrown from it, and that result is immuatable. They can also hold an exception which is the other possiblity from the executing computation.
+A future is a placeholder object for a value that may not exist yet becuase of an async operation that hasn't yet completed. Callbacks populate the future with the actual value when it's ready. The execution to get said value happens in an `ExecutionContext` - similar to an `Executor`, it can execute computations in a new, pooled or the current (discouraged) thread. Futures are completed when they get the value back from the computation, whether that's the expected value or an exception thrown from it, and that result is immuatable. They can also hold an exception which is the other possiblity from the executing computation. They are generally for async operations but can block when necessary.
 
 `Future[T]` is a type which denotes future objects, whereas `Future.apply` is a method which creates and schedules an asynchronous computation, and then returns a future object which will be completed with the result of that computation.
 
@@ -172,6 +172,8 @@ rateQuote onSuccess { case quote =>
 
 Importing `scala.concurrent` brings in `Future` and the 2nd import brings in the default execution context.
 
+###### Mapping 
+
 The problems with this approach are nested callbacks are required when doing a subsequent action in the onComplete of the first, and that operation & result is limited within that scope. For these reasons, futures provide combinators such as `map`, which allow a more straightforward composition. `map` will produce a new future with the value mapped from the original when it's completed (not dissimilar to mapping collections).
 
 The above can be done using `map` to eliminate the nesting and one onSuccess callback:
@@ -191,9 +193,42 @@ purchase onSuccess {
 }
 ```
 
+###### Combinators 
+
 If the mapping function throws an exception the future is completed with that exception. If the original future fails with an exception then the returned future also contains the same exception. This exception propagating semantics is present in the rest of the combinators, as well. They are designed to work with `for-comprehensions` also, so futures contain `flatMap`, `filter` and `foreach` combinators. 
 
 `flatMap` is not typically used outside of `for-comprehensions`, and `filter` creates a new future with the original's value only if it satisfies some predicate, else failing with a `NoSuchElementException`.
+
+###### Exception combinators
+
+Combinators to handle future exceptions include `recover`, which maps the exception to a new future's value. `recoverWith` is available and is similar to how `map` relates to `flatMap`. `fallbackTo` will try to populate a new future with the value of a fallback function given the first threw an exception. For example:
+
+```scala
+val usdQuote = Future {
+  connection.getCurrentValue(USD)
+} map {
+  usd => "Value: " + usd + "$"
+}
+val chfQuote = Future {
+  connection.getCurrentValue(CHF)
+} map {
+  chf => "Value: " + chf + "CHF"
+}
+
+val anyQuote = usdQuote fallbackTo chfQuote
+
+anyQuote onSuccess { println(_) }
+```
+
+`andThen` can be used just for side effect purposes, and can be chained and executed in order, essentially creating a new future as a copy of the original.
+
+Projections can be used to enable for-comprehensions on a result returned as an exception.
+
+Combinators are purely functional - they each return a new future which is related to the one it was derived form.
+
+###### Promises
+
+A promise is similar to a future but is writable (CompletableFuture), so can be kept by the issuer explicitly as it has a public setter.
 
 More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/overviews/core/futures.html)
 
