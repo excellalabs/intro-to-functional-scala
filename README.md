@@ -139,7 +139,7 @@ A future is a placeholder object for a value that may not exist yet becuase of a
 
 `Future[T]` is a type which denotes future objects, whereas `Future.apply` is a method which creates and schedules an asynchronous computation, and then returns a future object which will be completed with the result of that computation.
 
-EXAMPLE: Let’s assume that we want to use a hypothetical API of some popular social network to obtain a list of friends for a given user. We will open a new session and then send a request to obtain a list of friends of a particular user:
+EXAMPLE: Let’s assume that we want to use a hypothetical API of some popular social network to obtain a list of our recent posts. We will open a new session and then send a request to obtain a list:
 
 ```scala
 import scala.concurrent._
