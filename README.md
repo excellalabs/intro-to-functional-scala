@@ -20,6 +20,8 @@
 
 ### Section 2. 2 - Using collections
 
+Sequence comprehensions - syntatic construct for creating a list based on existing lists. `For comprehensions` can enumerate and filter.
+
 ### Section 2. 3 - Pattern matching
 
 For those not familiar with pattern matching, think of it as an eloquent, more advanced/useful switch statement. Pattern matching can be used to match more than just primitives. Pattern matching can match on custom types and can even extract from tuples or case classes. In a basic example below, we created the case class "Player", which consists of two fields: a number, and the player name. We created an instance of that class and matched on cases where the player's number is 20 and print the name.
@@ -170,7 +172,7 @@ Importing `scala.concurrent` brings in `Future` and the 2nd import brings in the
 
 The problems with this approach are nested callbacks are required when doing a subsequent action in the onComplete of the first, and that operation & result is limited within that scope. For these reasons, futures provide combinators such as `map`, which allow a more straightforward composition. `map` will produce a new future with the value mapped from the original when it's completed (not dissimilar to mapping collections).
 
-The above can be done using `map`:
+The above can be done using `map` to eliminate the nesting and one onSuccess callback:
 
 ```scala
 val rateQuote = Future {
@@ -187,6 +189,7 @@ purchase onSuccess {
 }
 ```
 
+If the mapping function throws an exception the future is completed with that exception. If the original future fails with an exception then the returned future also contains the same exception. This exception propagating semantics is present in the rest of the combinators, as well.
 
 More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/overviews/core/futures.html)
 
