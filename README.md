@@ -189,7 +189,7 @@ purchase onSuccess {
 }
 ```
 
-If the mapping function throws an exception the future is completed with that exception. If the original future fails with an exception then the returned future also contains the same exception. This exception propagating semantics is present in the rest of the combinators, as well.
+If the mapping function throws an exception the future is completed with that exception. If the original future fails with an exception then the returned future also contains the same exception. This exception propagating semantics is present in the rest of the combinators, as well. They are designed to work with `for-comprehensions` also, so futures contain `flatMap`, `filter` and `foreach` combinators. 
 
 More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/overviews/core/futures.html)
 
