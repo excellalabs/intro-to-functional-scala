@@ -166,7 +166,7 @@ rateQuote onSuccess { case quote =>
 }
 ```
 
-`scala.concurrent` brings in `Future` and the 2nd import brings in the default execution context.
+Importing `scala.concurrent` brings in `Future` and the 2nd import brings in the default execution context.
 
 The problems with this approach are nested callbacks are required when doing a subsequent action in the onComplete of the first, and that operation & result is limited within that scope. For these reasons, futures provide combinators such as `map`, which allow a more straightforward composition. `map` will produce a new future with the value mapped from the original when it's completed (not dissimilar to mapping collections).
 
