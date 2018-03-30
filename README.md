@@ -137,6 +137,8 @@ res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Everg
 
 A future is a placeholder object for a value that may not exist yet becuase of an async operations that hasn't yet completed. Callbacks populate the future with the actual value when it's ready. The execution to get said value happens in an `ExecutionContext` - similar to an `Executor`, it can execute computations in a new, pooled or the current (discouraged) thread.
 
+More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/overviews/core/futures.html)
+
 ### Section 2. 7 - Testing: Scalatest and Specs
 
 ### Section 2. 8 - Using SBT
