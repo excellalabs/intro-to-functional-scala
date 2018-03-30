@@ -139,9 +139,7 @@ A future is a placeholder object for a value that may not exist yet becuase of a
 
 `Future[T]` is a type which denotes future objects, whereas `Future.apply` is a method which creates and schedules an asynchronous computation, and then returns a future object which will be completed with the result of that computation.
 
-
-
-EXAMPLE: Let’s assume that we want to use a hypothetical API of some popular social network to obtain a list of our recent posts. We will open a new session and then send a request to obtain a list:
+EXAMPLE: Let’s assume that we want to use a hypothetical API of some popular stock service to get stock quotes and buy if a good deal. We will open a new connection and send a request to obtain a list:
 
 It is mde async with a future, and the following lines handle the results:
 
