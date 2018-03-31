@@ -6,10 +6,12 @@ Scala:
 - Functions & Evaluation
   - Functional vs. imperative
   - expressions, evaluation, conditionals, functional loops, functions, tuples, tail recursion, sequence comprehensions, comnbinators
+  - anonymous functions
 - Higher Order Functions
-  - functions as first class values, 
+  - functions as first class values
   - Scala syntax and how it's formally defined
   - methods, classes, data abstraction thru design of data structures
+  - currying
 - Data abstraction
   - traits
   - classes in hierarchies; hierarchy of standard Scala types; polymorphism
