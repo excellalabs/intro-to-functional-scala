@@ -182,13 +182,13 @@ res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Everg
 
 ##### Futures 
 
-A future is a placeholder object for a value that may not exist yet becuase of an async operation that hasn't yet completed. Callbacks populate the future with the actual value when it's ready. The execution to get said value happens in an `ExecutionContext` - similar to an `Executor`, it can execute computations in a new, pooled or the current (discouraged) thread. Futures are completed when they get the value back from the computation, whether that's the expected value or an exception thrown from it, and that result is immuatable. They can also hold an exception which is the other possiblity from the executing computation. They are generally for async operations but can block when necessary.
+A future is a placeholder object for a value that may not exist yet becuase of an async operation that hasn't yet completed. Callbacks populate the future with the actual value when it's ready. The execution to get said value happens in an `ExecutionContext` - similar to an `Executor`, it can execute computations in a new, pooled or the current (discouraged) thread. Futures are completed when they get the value back from the computation, whether that's the expected value or an exception thrown from it, and that result is immuatable. They are generally for async operations but can block when necessary.
 
 `Future[T]` is a type which denotes future objects, whereas `Future.apply` is a method which creates and schedules an asynchronous computation, and then returns a future object which will be completed with the result of that computation.
 
 EXAMPLE: Let’s assume that we want to use a hypothetical API of some popular stock service to get stock quotes and buy if a good deal. We will open a new connection and send a request to obtain a list:
 
-It is mde async with a future, and the following lines handle the results:
+It is made async with a future, and the following lines handle the results, however this way is not ideal which we will explore next:
 
 ```scala
 import scala.concurrent._
@@ -215,9 +215,9 @@ rateQuote onSuccess { case quote =>
 
 Importing `scala.concurrent` brings in `Future` and the 2nd import brings in the default execution context.
 
-###### Mapping 
+###### Mapping
 
-The problems with this approach are nested callbacks are required when doing a subsequent action in the onComplete of the first, and that operation & result is limited within that scope. For these reasons, futures provide combinators such as `map`, which allow a more straightforward composition. `map` will produce a new future with the value mapped from the original when it's completed (not dissimilar to mapping collections).
+The problems with this approach are nested callbacks are required when doing a subsequent action in the onComplete of the first, and that operation & result is limited within that scope. For these reasons, futures provide **combinators** such as `map`, which allow a more straightforward composition. `map` will produce a new future with the value mapped from the original when it's completed (not dissimilar to mapping collections).
 
 The above can be done using `map` to eliminate the nesting and one onSuccess callback:
 
