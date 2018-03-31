@@ -4,7 +4,7 @@
 
 ## Chapter 1 - Functional programming
 
-What makes it functional? [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class.
+**What makes it functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class.
 
 [Anonymous functions](https://dzone.com/articles/scala-higher-order-and-anonymous-functions) - using a function where it's declared as opposed to declaring it somewhere else first
 
@@ -12,15 +12,15 @@ What makes it functional? [Every function is a value](https://docs.scala-lang.or
 
 [Currying](https://docs.scala-lang.org/tour/multiple-parameter-lists.html) - when a method is called with a fewer number of parameter lists than it defined, yielding a function taking the missing parameter lists as its arguments
 
-[Case classes](https://docs.scala-lang.org/tour/case-classes.html) - like regular classes that have an apply method by default that takes care of object construction, and are compared by structure, not reference. They are good for modeling immutable data. They are declared with the `case class` keywork, new is not used, and parameter(s) are passed.
+[Case classes](https://docs.scala-lang.org/tour/case-classes.html) - like regular classes that have an apply method by default that takes care of object construction, and are compared by structure, not reference. They are good for modeling immutable data. They are declared with the `case class` keyword, new is not used, and parameter(s) are passed.
 
-[Pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) - a mechanism for checking a value against a pattern. A match can deconstruct the value into parts. More powerful than `switch` and can be used in place of if/else's.
+[Pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) - a mechanism for checking a value against a pattern. A match can deconstruct the value into parts. More powerful than `switch` and can be used in place of if/else collections.
 
-Scala is also object-oriented. [Every value is an object](https://docs.scala-lang.org/tour/unified-types.html) (i.e. functions represented by objects are called function values). Types and behavior of objects are described by classes and traits. Classes are extended by subclassing & a mixin-based composition mechanism as a clean replacement for multiple inheritance.
+**Scala is also object-oriented**. [Every value is an object](https://docs.scala-lang.org/tour/unified-types.html) (i.e. functions represented by objects are called function values). Types and behavior of objects are described by classes and traits. Classes are extended by subclassing & a mixin-based composition mechanism as a clean replacement for multiple inheritance.
 
 [Traits](https://docs.scala-lang.org/tour/traits.html) - for sharing interfaces and fields betweemn classes (like Java 8 interfaces). Can be extended by classes and objects but cannot be instantiated so have no parameters.
 
-[Mixin-based compoition](https://docs.scala-lang.org/tour/mixin-class-composition.html) - traits used to compose a class
+[Mixin-based composition](https://docs.scala-lang.org/tour/mixin-class-composition.html) - traits used to compose a class
 
 ### Section 1.1 - Why functional programming?
 
