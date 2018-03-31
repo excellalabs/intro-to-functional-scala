@@ -5,23 +5,28 @@ Scala:
 - Why Functional? Why Scala? Functional and OO.
 - Functions & Evaluation
   - Functional vs. imperative
-  - expressions, evaluation, conditionals, functional loops, functions, tuples, tail recursion, sequence comprehensions, comnbinators
+  - expressions, evaluation, functional loops, function structure, 
+  - sequence comprehensions, comnbinators
   - anonymous functions
+  - tuples, tail recursion
 - Higher Order Functions
   - functions as first class values
   - Scala syntax and how it's formally defined
   - methods, classes, data abstraction thru design of data structures
   - currying
-- Data abstraction
+- Data abstraction & object orientation
   - traits
   - classes in hierarchies; hierarchy of standard Scala types; polymorphism
   - organize classes and traits into packages
+  - case classes
+  - implicit classes
 - Types and Pattern Matching
   - functions vs objects (functions are objects)
   - Scala type system details - generics, subtyping, variance, etc.
   - Lists data structure
   - Pattern matching
-- Abstractions for concurrency 
+  - [For Comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
+- Abstractions for concurrency
   - [Futures/promises](README.md#Futures-and-Promises)
   - semaphores, actors, etc
 - [sbt](README.md#Using-SBT)
