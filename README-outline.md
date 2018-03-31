@@ -4,11 +4,11 @@ Scala:
 
 - Why Functional? Why Scala? Functional and OO.
 - Functions & Evaluation
-  - Functional vs. imperative
+  - functional vs. imperative
   - expressions, evaluation, functional loops, function structure, 
   - sequence comprehensions, comnbinators
   - anonymous functions
-  - tuples, tail recursion
+  - tail recursion
 - Higher Order Functions
   - functions as first class values
   - Scala syntax and how it's formally defined
@@ -23,11 +23,13 @@ Scala:
 - Types and Pattern Matching
   - functions vs objects (functions are objects)
   - Scala type system details - generics, subtyping, variance, etc.
-  - Lists data structure
-  - Pattern matching
-  - [For Comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
+  - lists data structure
+  - pattern matching
+  - [for comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
+  - tuples - like a like but can hold objects with different types
+  - monads, monoids
 - Abstractions for concurrency
-  - [Futures/promises](README.md#Futures-and-Promises)
+  - [futures/promises](README.md#Futures-and-Promises)
   - semaphores, actors, etc
 - [sbt](README.md#Using-SBT)
 
@@ -68,7 +70,7 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 1. [Play web framework tutorials](https://www.playframework.com/documentation/2.6.x/Tutorials) - including for Slick, JPA, Anom, EBean, Comet, WebSocket, Kalium cryptography, compile time DI
 1. [Play Hello World tutorial](https://www.playframework.com/documentation/1.3.0-RC1/firstapp) 
 
-  Additional examples: 
+  Additional examples:
 
   1. [Play starter example](https://github.com/playframework/play-scala-starter-example)
   1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
