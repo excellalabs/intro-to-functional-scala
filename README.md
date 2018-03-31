@@ -4,9 +4,11 @@
 
 ## Chapter 1 - Functional programming
 
-### Section 1.1 - What is functional programming & Scala?
+### Section 1.1 - What is functional programming & Scala & why use them?
 
-**What makes it functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class.
+Functional programming treats computation as the evaluation of functions and avoids changing state and mutable data. It's declarative, using expressions over statements. The output of a function depends only on the input always yielding the same results if called multiple times with the same inputs. This is in contrast to functions that depend on local or global state, which could have different results each time called depending on current state, and can have side effects which are changes in state that don't depend on the inputs. This can make **much easier to understand and predict the behavior** of an application.
+
+**What makes Scala functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class.
 
 [Anonymous functions](https://dzone.com/articles/scala-higher-order-and-anonymous-functions) - using a function where it's declared as opposed to declaring it somewhere else first
 
@@ -18,17 +20,42 @@
 
 [Pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) - a mechanism for checking a value against a pattern. A match can deconstruct the value into parts. More powerful than `switch` and can be used in place of if/else collections.
 
+[Sequence Comprehensions]() - any datatype with withFilter, map, and flatMap (with the proper types) can be used in sequence comprehensions.
+
+
+
 **Scala is also object-oriented**. [Every value is an object](https://docs.scala-lang.org/tour/unified-types.html) (i.e. functions represented by objects are called function values). Types and behavior of objects are described by classes and traits. Classes are extended by subclassing & a mixin-based composition mechanism as a clean replacement for multiple inheritance.
 
 [Traits](https://docs.scala-lang.org/tour/traits.html) - for sharing interfaces and fields betweemn classes (like Java 8 interfaces). Can be extended by classes and objects but cannot be instantiated so have no parameters.
 
 [Mixin-based composition](https://docs.scala-lang.org/tour/mixin-class-composition.html) - traits used to compose a class
 
+**Scala is statically typed** and has the following features:
+
+* generic classes
+* variance annotations
+* upper and lower type bounds,
+* inner classes and abstract types as object members
+* compound types
+* explicitly typed self references
+* implicit parameters and conversions
+* polymorphic methods
+
+**Extensibility in Scala**
+
+It's easy to add new language constructs in the form of libraries which makes creating DSLs easy.
+
+[Implicit classes](http://docs.scala-lang.org/overviews/core/implicit-classes.html) - allows adding extension methods to existing types
+[String interpolations](https://docs.scala-lang.org/overviews/core/string-interpolation.html)
+
 ### Section 1.1.2 - Why functional programming?
+
+
 
 ### Section 1.2 - Getting started
 
-* (Basics of Scala functions)(http://fruzenshtein.com/scala-introduction-to-functions/)
+* [Basics of Scala functions](http://fruzenshtein.com/scala-introduction-to-functions/)
+* 
 
 ### Section 1.3 - Data Structures
 
