@@ -4,7 +4,7 @@
 
 ## Chapter 1 - Functional programming
 
-[Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. Case classes and built-in support for patterm matching model algebraic types. Singleton objects project a concenient way to group functions that aren't members of a class.
+What makes it functional? [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. Case classes and built-in support for patterm matching model algebraic types. Singleton objects project a concenient way to group functions that aren't members of a class.
 
 [Anonymous functions](https://dzone.com/articles/scala-higher-order-and-anonymous-functions) - using a function where it's declared as opposed to declaring it somewhere else first
 
