@@ -26,7 +26,7 @@ Scala:
   - lists data structure
   - pattern matching
   - [for comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
-  - tuples - like a like but can hold objects with different types
+  - tuples - like a like but can hold objects with different types. They can be used to return multiple values at once, and are also useful to pass a list of data values as messages between actors in concurrent programming.
   - monads, monoids
 - Abstractions for concurrency
   - [futures/promises](README.md#Futures-and-Promises)
