@@ -4,7 +4,7 @@
 
 ## Chapter 1 - Functional programming
 
-### Section 1.1 - What is functional programming?
+### Section 1.1 - What is functional programming & Scala?
 
 **What makes it functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class.
 
