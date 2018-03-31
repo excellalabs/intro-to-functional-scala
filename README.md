@@ -4,6 +4,8 @@
 
 ## Chapter 1 - Functional programming
 
+### Section 1.1 - What is functional programming?
+
 **What makes it functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class.
 
 [Anonymous functions](https://dzone.com/articles/scala-higher-order-and-anonymous-functions) - using a function where it's declared as opposed to declaring it somewhere else first
@@ -22,9 +24,7 @@
 
 [Mixin-based composition](https://docs.scala-lang.org/tour/mixin-class-composition.html) - traits used to compose a class
 
-### Section 1.1 - Why functional programming?
-
-Scala is a pure object-oriented language in the sense that every value is an object. Types and behavior of objects are described by classes and traits. Classes are extended by subclassing and a flexible mixin-based composition mechanism as a clean replacement for multiple inheritance.
+### Section 1.1.2 - Why functional programming?
 
 ### Section 1.2 - Getting started
 
