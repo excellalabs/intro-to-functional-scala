@@ -20,9 +20,7 @@ Functional programming treats computation as the evaluation of functions and **a
 
 [Pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) - a mechanism for checking a value against a pattern. A match can deconstruct the value into parts. More powerful than `switch` and can be used in place of if/else collections.
 
-[Sequence Comprehensions]() - any datatype with withFilter, map, and flatMap (with the proper types) can be used in sequence comprehensions.
-
-
+[Sequence Comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html) - any datatype with withFilter, map, and flatMap (with the proper types) can be used in sequence comprehensions.
 
 **Scala is also object-oriented**. [Every value is an object](https://docs.scala-lang.org/tour/unified-types.html) (i.e. functions represented by objects are called function values). Types and behavior of objects are described by classes and traits. Classes are extended by subclassing & a mixin-based composition mechanism as a clean replacement for multiple inheritance.
 
@@ -45,17 +43,13 @@ Functional programming treats computation as the evaluation of functions and **a
 
 It's easy to add new language constructs in the form of libraries which makes creating DSLs easy.
 
-[Implicit classes](http://docs.scala-lang.org/overviews/core/implicit-classes.html) - allows adding extension methods to existing types
-[String interpolations](https://docs.scala-lang.org/overviews/core/string-interpolation.html)
-
-### Section 1.1.2 - Why functional programming?
-
-
+* [Implicit classes](http://docs.scala-lang.org/overviews/core/implicit-classes.html) - allows adding extension methods to existing types
+* [String interpolations](https://docs.scala-lang.org/overviews/core/string-interpolation.html)
 
 ### Section 1.2 - Getting started
 
 * [Basics of Scala functions](http://fruzenshtein.com/scala-introduction-to-functions/)
-* 
+* [SBT](sbt)
 
 ### Section 1.3 - Data Structures
 
