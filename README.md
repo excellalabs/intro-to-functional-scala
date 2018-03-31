@@ -8,7 +8,7 @@ What makes it functional? [Every function is a value](https://docs.scala-lang.or
 
 [Anonymous functions](https://dzone.com/articles/scala-higher-order-and-anonymous-functions) - using a function where it's declared as opposed to declaring it somewhere else first
 
-[Higher-order functions](https://docs.scala-lang.org/tour/higher-order-functions.html) - take other functions as parameters or return a function `map` is a common example. Functions passed as arguments are `callback functions`.
+[Higher-order functions](https://docs.scala-lang.org/tour/higher-order-functions.html) - take other functions as parameters or return a function.  `map` is a common example. Functions passed as arguments are `callback functions`.
 
 [Currying](https://docs.scala-lang.org/tour/multiple-parameter-lists.html) - when a method is called with a fewer number of paramter lists than it defined, yielding a fucnction taking the missing parameter lists as its arguments
 
