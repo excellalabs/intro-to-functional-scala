@@ -10,9 +10,9 @@ What makes it functional? [Every function is a value](https://docs.scala-lang.or
 
 [Higher-order functions](https://docs.scala-lang.org/tour/higher-order-functions.html) - take other functions as parameters or return a function.  `map` is a common example. Functions passed as arguments are `callback functions`.
 
-[Currying](https://docs.scala-lang.org/tour/multiple-parameter-lists.html) - when a method is called with a fewer number of paramter lists than it defined, yielding a fucnction taking the missing parameter lists as its arguments
+[Currying](https://docs.scala-lang.org/tour/multiple-parameter-lists.html) - when a method is called with a fewer number of parameter lists than it defined, yielding a function taking the missing parameter lists as its arguments
 
-[Case classes](https://docs.scala-lang.org/tour/case-classes.html) - like regular classes that have an apply method by default that takes care of object construction, and are compared by structure, not reference.
+[Case classes](https://docs.scala-lang.org/tour/case-classes.html) - like regular classes that have an apply method by default that takes care of object construction, and are compared by structure, not reference. They are good for modeling immutable data. They are declared with the `case class` keywork, new is not used, and parameter(s) are passed.
 
 [Pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) - a mechanism for checking a value against a pattern. A match can deconstruct the value into parts. More powerful than `switch` and can be used in place of if/else's.
 
