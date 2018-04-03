@@ -8,7 +8,7 @@ Scala:
   - expressions, evaluation, functional loops, function structure, 
   - sequence comprehensions, comnbinators
   - anonymous functions
-  - tail recursion
+  - tail recursion | [ex](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
 - Higher Order Functions
   - functions as first class values
   - Scala syntax and how it's formally defined
