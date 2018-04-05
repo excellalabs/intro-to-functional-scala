@@ -20,6 +20,7 @@ Scala:
   - organize classes and traits into packages
   - case classes
   - implicit classes
+  - [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type for representing optional values instead of null, so forces the compiler to deal with it
 - Types and Pattern Matching
   - functions vs objects (functions are objects)
   - Scala type system details - generics, subtyping, variance, etc.
@@ -61,9 +62,14 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 1. Scala exercises:
     1. [Scala exercises](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
     1. [Excerism.io exercises](http://exercism.io/languages/scala/about)
-1. [Neophyte's Guide to Scala](http://danielwestheide.com/scala/neophytes.html)
 1. [Twitter Scala School](https://twitter.github.io/scala_school/)
 1. [Coursera Course, Functional Programming Principles in Scala](https://www.coursera.org/learn/progfun1)
+
+### 2. Walkthroughs
+
+- `Option`, `Future`, and `Try` are important to focus on
+- [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
+- [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
 
 ### 2: Play 
 
@@ -75,14 +81,9 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
   1. [Play starter example](https://github.com/playframework/play-scala-starter-example)
   1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
 
-### 3. Walkthroughs
-
-- `Option`, `Future`, and `Try` are important to focus on
-- [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
-- [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
-
 ### 4: In-depth Learning
 
+- [Neophyte's Guide to Scala - a little deeper in explaining concepts](http://danielwestheide.com/scala/neophytes.html)
 - [Get the most out of Scala with Functional Programming in Scala (Scala book club used it)](https://www.manning.com/books/functional-programming-in-scala)
 - Martin Odersky's Programming in Scala book
 - [Scala By Example (PDF)](http://www.scala-lang.org/docu/files/ScalaByExample.pdf)
