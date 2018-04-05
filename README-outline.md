@@ -5,7 +5,7 @@ Scala:
 - Why Functional? Why Scala? Functional and OO.
 - Functions & Evaluation
   - functional vs. imperative
-  - expressions, evaluation, functional loops, function structure, 
+  - expressions, evaluation, functional loops, function structure, final variables, string interpolation, loops with & without for, arrays, lists. sets, maps, mutable collectors & operations, classes
   - sequence comprehensions, comnbinators
   - anonymous functions
   - [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
@@ -28,7 +28,8 @@ Scala:
   - pattern matching
   - [for comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
   - tuples - like a like but can hold objects with different types. They can be used to return multiple values at once, and are also useful to pass a list of data values as messages between actors in concurrent programming.
-  - monads, monoids
+  - Match as a switch
+  - [monads](* [Using monads in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534), monoids
 - Abstractions for concurrency
   - [futures/promises](README.md#Futures-and-Promises)
   - semaphores, actors, etc
