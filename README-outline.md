@@ -3,9 +3,11 @@
 Scala:
 
 - Why Functional? Why Scala? Functional and OO.
+- [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type to represent value that may be present or not forcing you to not rely on a value that may be absent
+- `Future`, and `Try`
 - Functions & Evaluation
   - functional vs. imperative
-  - expressions, evaluation, functional loops, function structure, final variables, string interpolation, loops with & without for, arrays, lists. sets, maps, mutable collectors & operations, classes
+  - expressions, evaluation, functional loops, function structure, final variables, string interpolation, loops with & without for, arrays, mutable collectors & operations, classes
   - sequence comprehensions, comnbinators
   - anonymous functions
   - [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
@@ -24,8 +26,8 @@ Scala:
 - Types and Pattern Matching
   - functions vs objects (functions are objects)
   - Scala type system details - generics, subtyping, variance, etc.
-  - lists data structure
-  - pattern matching
+  - lists, sets, maps data structure
+  - (pattern matching)[README.md]
   - [for comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
   - tuples - like a list but can hold objects with different types. They can be used to return multiple values at once, and are also useful to pass a list of data values as messages between actors in concurrent programming.
   - Match as a switch
@@ -59,16 +61,15 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 1. [Tour of Scala - Scala Docs](https://docs.scala-lang.org/tour/tour-of-scala.html) - bite-sized introductions to the most-used features of Scala
 1. [Learn in 1 Video](https://www.youtube.com/watch?v=DzFt0YkZo8M)
 1. [Fundamentals First (video)](https://www.youtube.com/watch?v=ugHsIj60VfQ)
-1. Scala for the Impatient? (book)
 1. Scala exercises:
     1. [Scala exercises](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
     1. [Excerism.io exercises](http://exercism.io/languages/scala/about)
+1. [Scala for the Impatient (book)](http://fileadmin.cs.lth.se/scala/scala-impatient.pdf)
 1. [Twitter Scala School](https://twitter.github.io/scala_school/)
 1. [Coursera Course, Functional Programming Principles in Scala](https://www.coursera.org/learn/progfun1)
 
 ### 2. Walkthroughs
 
-- `Option`, `Future`, and `Try` are important to focus on
 - [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
 - [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
 
