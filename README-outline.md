@@ -3,12 +3,14 @@
 Scala:
 
 - Why Functional? Why Scala? Functional and OO.
+- [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type to represent value that may be present or not forcing you to not rely on a value that may be absent
+- `Future`, and `Try`
 - Functions & Evaluation
   - functional vs. imperative
-  - expressions, evaluation, functional loops, function structure, 
+  - expressions, evaluation, functional loops, function structure, final variables, string interpolation, loops with & without for, arrays, mutable collectors & operations, classes
   - sequence comprehensions, comnbinators
   - anonymous functions
-  - tail recursion
+  - [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
 - Higher Order Functions
   - functions as first class values
   - Scala syntax and how it's formally defined
@@ -27,7 +29,9 @@ Scala:
   - pattern matching
   - [for comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
   - tuples - like a list but fixed in size and can hold objects with different types. They can be used to return multiple values at once, and are also useful to pass a list of data values as messages between actors in concurrent programming.
-  - monads, monoids
+  - [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type for representing optional values instead of null, so forces the compiler to deal with it
+  - Match as a switch
+  - [monads](* [Using monads in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534), monoids
 - Abstractions for concurrency
   - [futures/promises](README.md#Futures-and-Promises)
   - semaphores, actors, etc
@@ -57,13 +61,17 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 1. [Tour of Scala - Scala Docs](https://docs.scala-lang.org/tour/tour-of-scala.html) - bite-sized introductions to the most-used features of Scala
 1. [Learn in 1 Video](https://www.youtube.com/watch?v=DzFt0YkZo8M)
 1. [Fundamentals First (video)](https://www.youtube.com/watch?v=ugHsIj60VfQ)
-1. Scala for the Impatient? (book)
 1. Scala exercises:
-  1. [Scala exercises](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
-  1. [Excerism.io exercises](http://exercism.io/languages/scala/about)
-1. [Neophyte's Guide to Scala](http://danielwestheide.com/scala/neophytes.html)
+    1. [Scala exercises - starter tutorial, then there's more](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
+    1. [Katas - Excerism.io](hhttp://exercism.io/languages/scala/exercises)
+1. [Scala for the Impatient (book)](http://fileadmin.cs.lth.se/scala/scala-impatient.pdf)
 1. [Twitter Scala School](https://twitter.github.io/scala_school/)
 1. [Coursera Course, Functional Programming Principles in Scala](https://www.coursera.org/learn/progfun1)
+
+### 2. Walkthroughs
+
+- [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
+- [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
 
 ### 2: Play 
 
@@ -75,14 +83,9 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
   1. [Play starter example](https://github.com/playframework/play-scala-starter-example)
   1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
 
-### 3. Walkthroughs
-
-- `Option`, `Future`, and `Try` are important to focus on
-- [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
-- [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
-
 ### 4: In-depth Learning
 
+- [Neophyte's Guide to Scala - a little deeper in explaining concepts](http://danielwestheide.com/scala/neophytes.html)
 - [Get the most out of Scala with Functional Programming in Scala (Scala book club used it)](https://www.manning.com/books/functional-programming-in-scala)
 - Martin Odersky's Programming in Scala book
 - [Scala By Example (PDF)](http://www.scala-lang.org/docu/files/ScalaByExample.pdf)

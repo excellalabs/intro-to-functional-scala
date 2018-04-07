@@ -20,6 +20,8 @@ Functional programming treats computation as the evaluation of functions and **a
 
 [Pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) - a mechanism for checking a value against a pattern. A match can deconstruct the value into parts. More powerful than `switch` and can be used in place of if/else collections.
 
+  * [Exercises](https://www.scala-exercises.org/std_lib/pattern_matching)
+
 [Sequence Comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html) - generally creating a list based on existing lists, but any datatype with datatype with withFilter, map, and flatMap (with the proper types) can be used.
 
 **Scala is also object-oriented**. [Every value is an object](https://docs.scala-lang.org/tour/unified-types.html) (i.e. functions represented by objects are called function values). Types and behavior of objects are described by classes and traits. Classes are extended by subclassing & a mixin-based composition mechanism as a clean replacement for multiple inheritance.
