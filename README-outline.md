@@ -15,18 +15,18 @@ Scala:
   - methods, classes, data abstraction thru design of data structures
   - currying
 - Data abstraction & object orientation
-  - traits
+  - [traits](https://docs.scala-lang.org/tour/traits.html)
   - classes in hierarchies; hierarchy of standard Scala types; polymorphism
   - organize classes and traits into packages
   - case classes
   - implicit classes
-- Types and Pattern Matching
+- [Types](https://docs.scala-lang.org/tour/unified-types.html) and [Pattern Matching](https://docs.scala-lang.org/tour/pattern-matching.html)
   - functions vs objects (functions are objects)
-  - Scala type system details - generics, subtyping, variance, etc.
+  - Scala [type system](https://docs.scala-lang.org/tour/traits.html) details - [unified types](https://docs.scala-lang.org/tour/traits.html), generics, subtyping, variance, etc.
   - lists data structure
   - pattern matching
   - [for comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
-  - tuples - like a like but can hold objects with different types. They can be used to return multiple values at once, and are also useful to pass a list of data values as messages between actors in concurrent programming.
+  - tuples - like a list but fixed in size and can hold objects with different types. They can be used to return multiple values at once, and are also useful to pass a list of data values as messages between actors in concurrent programming.
   - monads, monoids
 - Abstractions for concurrency
   - [futures/promises](README.md#Futures-and-Promises)
