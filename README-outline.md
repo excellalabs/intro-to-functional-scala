@@ -85,5 +85,5 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 
 - [Neophyte's Guide to Scala - a little deeper in explaining concepts](http://danielwestheide.com/scala/neophytes.html)
 - [Get the most out of Scala with Functional Programming in Scala (Scala book club used it)](https://www.manning.com/books/functional-programming-in-scala)
-- Martin Odersky's Programming in Scala book
+- [Martin Odersky's Programming in Scala book](https://www.scala-lang.org/docu/files/ScalaByExample.pdf)
 - [Scala By Example (PDF)](http://www.scala-lang.org/docu/files/ScalaByExample.pdf)
