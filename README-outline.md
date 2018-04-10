@@ -44,6 +44,7 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 
   - [Main concepts overview](https://www.playframework.com/documentation/2.6.x/ScalaHome)
     - [App architecture](https://www.playframework.com/documentation/2.6.x/Anatomy)
+    - [Working with Play, deploying, etc](https://www.playframework.com/documentation/2.6.x/Home)
     - [Configuration API](https://www.playframework.com/documentation/2.6.x/ScalaConfig)
     - Actions - represents HTTP response to client, [Essential Action](https://www.playframework.com/documentation/2.6.x/ScalaEssentialAction)
     - [Routing](), [session & flash scopes (state available next request only, via cookies so 4kb max strings only)](https://www.playframework.com/documentation/2.6.x/ScalaSessionFlash)
