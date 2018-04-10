@@ -87,10 +87,9 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 1. [Coursera Course, Functional Programming Principles in Scala](https://www.coursera.org/learn/progfun1)
 1. [Scala for the Impatient (book)](http://fileadmin.cs.lth.se/scala/scala-impatient.pdf)
 
-### 2: Play tutorials
+### 2: Play
 
 1. [Play Concepts overview](https://www.playframework.com/documentation/2.6.x/ScalaHome)
-1. [Creating forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
 1. First tutorial:
   - Create a Welcome to Play scaffold: `playframework/play-scala-seed.g8` then `sbt run`
   - Pick up with this [tutorial here](https://spr.com/building-a-simple-rest-api-with-scala-play-part-2/)
@@ -104,6 +103,7 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
   - [Play starter example](https://github.com/playframework/play-scala-starter-example)
   - [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
   - [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
+  - [Creating forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
 
 ### 4: In-depth Learning
 
