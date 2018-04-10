@@ -67,9 +67,9 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 1. Scala exercises:
     1. [Scala exercises - starter tutorial, then there's more](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
     1. [Katas - Excerism.io](hhttp://exercism.io/languages/scala/exercises)
-1. [Scala for the Impatient (book)](http://fileadmin.cs.lth.se/scala/scala-impatient.pdf)
 1. [Twitter Scala School](https://twitter.github.io/scala_school/)
 1. [Coursera Course, Functional Programming Principles in Scala](https://www.coursera.org/learn/progfun1)
+1. [Scala for the Impatient (book)](http://fileadmin.cs.lth.se/scala/scala-impatient.pdf)
 
 ### 2: Play tutorials
 
