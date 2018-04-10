@@ -80,7 +80,7 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
   - Pick up with this [tutorial here](https://spr.com/building-a-simple-rest-api-with-scala-play-part-2/)
     - See view returned, edit `/conf/routes` to add a GET, /api to same controller class `HomeController` and in there add a new function to return a string like `def indexapi() = Action { Ok("Hello from Play API!") }`.
     - Add new controller, data access
-1. [Play with Scala, React, WebJars tutorial](http://ticofab.io/react-js-tutorial-with-play_scala_webjars/)
+1. [Wire in React tutorial](http://ticofab.io/react-js-tutorial-with-play_scala_webjars/)
 
   Additional examples:
 
