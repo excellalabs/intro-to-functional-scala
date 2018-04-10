@@ -68,20 +68,18 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 1. [Twitter Scala School](https://twitter.github.io/scala_school/)
 1. [Coursera Course, Functional Programming Principles in Scala](https://www.coursera.org/learn/progfun1)
 
-### 2. Walkthroughs
-
-- [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
-- [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
-
-### 2: Play 
+### 2: Play tutorials
 
 1. [Play web framework tutorials](https://www.playframework.com/documentation/2.6.x/Tutorials) - including for Slick, JPA, Anom, EBean, Comet, WebSocket, Kalium cryptography, compile time DI
-1. [Play Hello World tutorial](https://www.playframework.com/documentation/1.3.0-RC1/firstapp) 
+  - [Play Hello World tutorial](https://www.playframework.com/documentation/1.3.0-RC1/firstapp) 
 
   Additional examples:
 
-  1. [Play starter example](https://github.com/playframework/play-scala-starter-example)
-  1. [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
+  - [Play starter example](https://github.com/playframework/play-scala-starter-example)
+  - [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
+  - [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
+  - [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
+
 
 ### 4: In-depth Learning
 
