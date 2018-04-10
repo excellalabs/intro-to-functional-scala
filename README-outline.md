@@ -71,15 +71,13 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 ### 2: Play tutorials
 
 1. [Play web framework tutorials](https://www.playframework.com/documentation/2.6.x/Tutorials) - including for Slick, JPA, Anom, EBean, Comet, WebSocket, Kalium cryptography, compile time DI
-  - [Play Hello World tutorial](https://www.playframework.com/documentation/1.3.0-RC1/firstapp) 
+1. [Creating forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
 
   Additional examples:
 
   - [Play starter example](https://github.com/playframework/play-scala-starter-example)
-  - [Creaeting forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
   - [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
   - [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
-
 
 ### 4: In-depth Learning
 
