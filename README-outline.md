@@ -68,10 +68,7 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
     - [Testing](https://www.playframework.com/documentation/2.6.x/ScalaTestingYourApplication)
       - [With a database](https://www.playframework.com/documentation/2.6.x/ScalaTestingWithDatabases)
       = [Web service clients](https://www.playframework.com/documentation/2.6.x/ScalaTestingWebServiceClients)
-  - EBean
   - Kalium cryptography
-  - compile time DI
-  - WebJars
 
 ## Learning Steps
 
