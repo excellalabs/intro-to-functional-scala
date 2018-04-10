@@ -36,22 +36,38 @@ Scala:
   - [futures/promises](README.md#Futures-and-Promises)
   - semaphores, actors, etc
 - [sbt](README.md#Using-SBT)
+- [DI in Scala](https://di-in-scala.github.io/)
 
 Play:
 
 Open-source scalable web framework in Scala or Java (JVM), based on a lightweight, stateless web-friendly architecture & built on Akka. Predictable & minimal resource consumption.
 
-  - Async, futures, idiomatic error handling
-  - Template engine
-  - Slick functional relational mapper (FRM)
-    - Work with data almost as if using Scala collections
-    - Full control over when database access happens and what data is transferred
-    - Can use SQL directly
-    - Database actions are executed asynchronously so good for reactive apps based on Play & Akka
-  - Anom
+  - [Main concepts overview](https://www.playframework.com/documentation/2.6.x/ScalaHome)
+    - [Configuration API](https://www.playframework.com/documentation/2.6.x/ScalaConfig)
+    - Actions - represents HTTP response to client, [Essential Action](https://www.playframework.com/documentation/2.6.x/ScalaEssentialAction)
+    - [Routing](), [session & flash scopes (state available next request only, via cookies so 4kb max strings only)](https://www.playframework.com/documentation/2.6.x/ScalaSessionFlash)
+    - [Body parsers](https://www.playframework.com/documentation/2.6.x/ScalaBodyParsers)
+    - [Error Handling](https://www.playframework.com/documentation/2.6.x/ScalaErrorHandling)
+    - [Async, futures](https://www.playframework.com/documentation/2.6.x/ScalaAsync)
+    - [Streaming HTTP responses](https://www.playframework.com/documentation/2.6.x/ScalaStream)
+    (https://www.playframework.com/documentation/2.6.x/ScalaActions)
+    - Comet, WebSocket
+    - [Template engine](https://www.playframework.com/documentation/2.6.x/ScalaTemplates)
+    - [Working with JSON](https://www.playframework.com/documentation/2.6.x/ScalaJson)
+    - Databases
+      - [Accessing a database via Slick, functional relational mapper (FRM)](https://www.playframework.com/documentation/2.6.x/PlaySlick)
+        - [Database Evolutions](https://www.playframework.com/documentation/2.6.x/Evolutions)
+        - Work with data almost as if using Scala collections
+        - Full control over when database access happens and what data is transferred
+        - Can use SQL directly
+        - Database actions are executed asynchronously so good for reactive apps based on Play & Akka
+      - [Access a database via Anorm for more complex queries or legacy databases](https://www.playframework.com/documentation/2.6.x/ScalaAnorm)
+    - [Cache API via Ehcache](https://www.playframework.com/documentation/2.6.x/ScalaCache)
+    - [Runtime DI](https://www.playframework.com/documentation/2.6.x/ScalaDependencyInjection) and [Compile-time DI](https://www.playframework.com/documentation/2.6.x/ScalaCompileTimeDependencyInjection)
+    - [Logging API](https://www.playframework.com/documentation/2.6.x/ScalaLogging)
+    - [Testing](https://www.playframework.com/documentation/2.6.x/ScalaTestingYourApplication)
+      - [With a database](https://www.playframework.com/documentation/2.6.x/ScalaTestingWithDatabases)
   - EBean
-  - Comet
-  - WebSocket
   - Kalium cryptography
   - compile time DI
   - WebJars
@@ -80,6 +96,7 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
   - Pick up with this [tutorial here](https://spr.com/building-a-simple-rest-api-with-scala-play-part-2/)
     - See view returned, edit `/conf/routes` to add a GET, /api to same controller class `HomeController` and in there add a new function to return a string like `def indexapi() = Action { Ok("Hello from Play API!") }`.
     - Add new controller, data access
+    - [Create an Actor and use it](https://www.playframework.com/documentation/2.6.x/ScalaAkka)
 
   Additional examples:
 
