@@ -41,6 +41,8 @@ Play:
 
 Open-source scalable web framework in Scala or Java (JVM), based on a lightweight, stateless web-friendly architecture & built on Akka. Predictable & minimal resource consumption.
 
+  - Async, futures, idiomatic error handling
+  - Template engine
   - Slick functional relational mapper (FRM)
     - Work with data almost as if using Scala collections
     - Full control over when database access happens and what data is transferred
@@ -52,6 +54,7 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
   - WebSocket
   - Kalium cryptography
   - compile time DI
+  - WebJars
 
 ## Learning Steps
 
@@ -70,11 +73,18 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 
 ### 2: Play tutorials
 
-1. [Play web framework tutorials](https://www.playframework.com/documentation/2.6.x/Tutorials) - including for Slick, JPA, Anom, EBean, Comet, WebSocket, Kalium cryptography, compile time DI
+1. [Play Concepts overview](https://www.playframework.com/documentation/2.6.x/ScalaHome)
 1. [Creating forms with Play](http://pedrorijo.com/blog/play-forms/#getting-started)
+1. First tutorial:
+  - Create a Welcome to Play scaffold: `playframework/play-scala-seed.g8` then `sbt run`
+  - Pick up with this [tutorial here](https://spr.com/building-a-simple-rest-api-with-scala-play-part-2/)
+    - See view returned, edit `/conf/routes` to add a GET, /api to same controller class `HomeController` and in there add a new function to return a string like `def indexapi() = Action { Ok("Hello from Play API!") }`.
+    - Add new controller, data access
+1. [Play with Scala, React, WebJars tutorial](http://ticofab.io/react-js-tutorial-with-play_scala_webjars/)
 
   Additional examples:
 
+  - [Play web framework tutorials](https://www.playframework.com/documentation/2.6.x/Tutorials) - including for Slick, JPA, Anom, EBean, Comet, WebSocket, Kalium cryptography, compile time DI
   - [Play starter example](https://github.com/playframework/play-scala-starter-example)
   - [Play, Scala,  REST API Example](https://github.com/playframework/play-scala-rest-api-example)
   - [Play, Scala, Slick example](https://github.com/playframework/play-scala-slick-example)
