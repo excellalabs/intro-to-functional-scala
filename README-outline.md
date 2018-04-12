@@ -3,14 +3,13 @@
 Scala:
 
 - Why Functional? Why Scala? Functional and OO.
-- [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type to represent value that may be present or not forcing you to not rely on a value that may be absent
-- `Future`, and `Try`
 - Functions & Evaluation
   - functional vs. imperative
   - expressions, evaluation, functional loops, function structure, final variables, string interpolation, loops with & without for, arrays, mutable collectors & operations, classes
   - sequence comprehensions, comnbinators
   - anonymous functions
   - [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
+  - [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type to represent value that may be present or not forcing you to not rely on a value that may be absent
 - Higher Order Functions
   - functions as first class values
   - Scala syntax and how it's formally defined
