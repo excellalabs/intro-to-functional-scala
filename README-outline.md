@@ -27,7 +27,7 @@ Scala:
   - collections data structure
   - pattern matching
   - [for comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
-  - [map, flatMap to map functions to elements](http://www.brunton-spall.co.uk/post/2011/12/02/map-map-and-flatmap-in-scala/)
+  - [map to map functions to elements, flatmap for returning in 1 list](http://www.brunton-spall.co.uk/post/2011/12/02/map-map-and-flatmap-in-scala/)
   - tuples - like a list but fixed in size and can hold objects with different types. They can be used to return multiple values at once, and are also useful to pass a list of data values as messages between actors in concurrent programming.
   - [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type for representing optional values instead of null, so forces the compiler to deal with it
   - Match as a switch
