@@ -16,7 +16,7 @@
   - 2.4.2 Polymorphism and types
   - 2.5 Pattern matching
   - 2.6 Type Classes
-  - 2.6 Concurrency
+  - [2.6 Concurrency](README.md#Section-2.6---Concurrency)
   - 2.7 Testing - Scalatest and Specs
   - 2.8 sbt
 - 3.0 Play
@@ -235,7 +235,7 @@ scala> Person("Homer", "742 Evergreen Terrace").toJson
 res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Evergreen Terrace)))
 ```
 
-### Section 2. 6 - Concurrency
+### Section 2.6 - Concurrency
 
 #### Futures and Promises
 
