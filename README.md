@@ -7,7 +7,7 @@ Intro to Functional Scala outline:
 - [0.1 Key Concepts](README-outline.md)
 - 1.0 Functional Programming
   - [1.1 Why Functional? Why Scala?](#section-11---why-scala)
-  - [1.2 Getting Started with Functional](#section-12---getting-started-with-functional)
+  - 1.2 Getting Started with Functional
   - 1.3 Functional Data Structures
   - 1.4 Exceptions without Errors
   - 1.5 Handling State
@@ -39,12 +39,10 @@ Functional programming treats computation as the evaluation of functions and **a
 
 It's declarative, using expressions over statements. The **output of a function depends only on the input**, always yielding the same results if called multiple times with the same input (**pure function**). This is in contrast to functions that depend on local or global state, which could have different results each time called **depending on current state** (lacking **referential transparency**), and can have **side effects** which are changes in state that don't depend on the inputs. Thus functional programming can make **much easier to understand and predict the behavior** of an application.
 
-### Section 1.2 - Getting Started with Functional
-
-**What makes Scala functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class. Lends itself to concurrency, mapping, reducing, applying lambda functions.
-
 - Indempotence - a property of a function that says you can apply it many times and get the same result
 - Uniform access principle - object.field and object.method have the smae syntax (i.e. vs Java where it's object.field and object.method()). Scala best practice says you shouldn't care if dealing with an Option or collection, because all of them can be treated equally in most situations using common higher order functions like `.map, .foreach, .flatMap, .filter, .isEmpty, etc`.
+
+**What makes Scala functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class. Lends itself to concurrency, mapping, reducing, applying lambda functions.
 
 [Anonymous functions](https://dzone.com/articles/scala-higher-order-and-anonymous-functions) - using a function where it's declared as opposed to declaring it somewhere else first
 
@@ -85,6 +83,10 @@ It's easy to add new language constructs in the form of libraries which makes cr
 
 * [Implicit classes](http://docs.scala-lang.org/overviews/core/implicit-classes.html) - allows adding extension methods to existing types
 * [String interpolations](https://docs.scala-lang.org/overviews/core/string-interpolation.html)
+
+### Section 1.2 - Getting started with Functional
+
+* [Get up and running with SBT CLI and an IDE](http://docs.scala-lang.org/getting-started.html)
 
 ### Section 1.3 - Functional Data Structures
 
