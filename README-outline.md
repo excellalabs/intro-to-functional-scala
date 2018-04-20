@@ -15,7 +15,7 @@ Scala:
     - Currying
   - anonymous functions    
   - expressions (vs statements), evaluation, functional loops with and without fors, function structure, final variables, string interpolation, mutable collectors & operations, [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
-  1.3 [Functional Data Structures](https://www.scala-exercises.org/fp_in_scala/functional_data_structures)
+- [1.3 Functional Data Structures](https://www.scala-exercises.org/fp_in_scala/functional_data_structures)
 - [1.4 Exceptions without Errors](README.md#1.4-Exceptions-without-errors)
   - [Why do we need monads?](https://stackoverflow.com/questions/28139259/why-do-we-need-monads/28139260#28139260)
 - [2.1 Scala Intro](README.md#Section-21---Intro)

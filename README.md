@@ -8,7 +8,7 @@ Intro to Functional Scala outline:
 - 1.0 Functional Programming
   - [1.1 Why Functional? Why Scala?](#section-11---why-scala)
   - 1.2 Getting Started with Functional
-  - 1.3 Data Structures
+  - 1.3 Functional Data Structures
   - 1.4 Exceptions without Errors
   - 1.5 Handling State
 - 2.0 Scala
