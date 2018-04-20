@@ -3,29 +3,29 @@
 Scala:
 
 - [1.0 Why Functional? Why Scala? Functional and OO](README.md#Section1.1-Why-Scala)
+  - Lends itself to concurrency, mapping, reducing, applying lambda functions
 - 1.2 Functions & Evaluation
   - Referential integrity, pure functions, indempotence, uniform access principle
   - functional vs. imperative
   
-  - expressions, evaluation, 
+  - expressions (vs statements), evaluation, 
+
+  - Hallmark funcrtional features  
+    - Higher Order Functions, functions as first class values
+    - Closures
+    - currying
+
   - functional loops with and without fors, function structure, final variables, string interpolation, mutable collectors & operations
-- Higher Order Functions
-  - functions as first class values
 
   - data abstraction thru design of data structures
 
   - 1.4
-  - [Why do we need monads?](https://stackoverflow.com/questions/28139259/why-do-we-need-monads/28139260#28139260)
-
+    - [Why do we need monads?](https://stackoverflow.com/questions/28139259/why-do-we-need-monads/28139260#28139260)
 
   - sequence comprehensions, comnbinators  
   
   - anonymous functions
   - [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
-
-  
-
-  - currying
 
 - 2.0 Scala Intro
 - functions vs methods 
