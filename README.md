@@ -16,7 +16,7 @@
   - 2.4.2 Polymorphism and types
   - 2.5 Pattern matching
   - 2.6 Type Classes
-  - [2.6 Concurrency](README.md#section-2.6-concurrency)
+  - [2.6 Concurrency](README.md#section-2.6---concurrency)
   - 2.7 Testing - Scalatest and Specs
   - 2.8 sbt
 - 3.0 Play
