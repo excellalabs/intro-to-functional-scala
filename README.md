@@ -2,24 +2,24 @@
 
 [Curriculum Outline](README-outline.md)
 
-- 1.0 Functional Programming
-  - 1.1 Why Functional? Why Scala?
+- [1.0 Functional Programming](README.md#section-11---why-scala)
+  - [1.1 Why Functional? Why Scala?](section-11---why-scala)
   - 1.2 Getting Started with Functional
   - 1.3 Data Structures
   - 1.4 Exceptions without Errors
   - 1.5 Handling State
-- 2.0 Scala
+- [2.0 Scala](README.md#chapter-2-scala)
   - 2.1 Intro
   - 2.2 Using Collections
   - 2.3 Composing functions
   - 2.4 Object Orientation
   - 2.4.2 Polymorphism and types
-  - 2.5 Pattern matching
-  - 2.6 Type Classes
-  - [2.6 Concurrency](README.md#section-26---concurrency)
-  - 2.7 Testing - Scalatest and Specs
-  - 2.8 sbt
-- 3.0 Play
+  - [2.5 Pattern matching](README.md#section-25---pattern-matching)
+  - [2.6 Type Classesy](README.md#section-26---type-classes)
+  - [2.7 Concurrency](README.md#section-26---concurrency)
+  - 2.8 Testing - Scalatest and Specs
+  - 2.9 sbt
+- [3.0 Play](README.md#play)
   - With React
   - With Slick
   - With SSE
@@ -79,7 +79,7 @@ It's easy to add new language constructs in the form of libraries which makes cr
 * [Implicit classes](http://docs.scala-lang.org/overviews/core/implicit-classes.html) - allows adding extension methods to existing types
 * [String interpolations](https://docs.scala-lang.org/overviews/core/string-interpolation.html)
 
-### Section 1.2 - Getting started
+### Section 1.2 - Getting started with Functional
 
 * [Basics of Scala functions](http://fruzenshtein.com/scala-introduction-to-functions/)
 * [SBT](sbt)
@@ -334,9 +334,9 @@ A promise is similar to a future but is writable (CompletableFuture), so can be 
 
 More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/overviews/core/futures.html)
 
-### Section 2.7 - Testing: Scalatest and Specs
+### Section 2.8 - Testing: Scalatest and Specs
 
-### Section 2.8 - Using SBT
+### Section 2.9 - Using SBT
 
 #### What is SBT?
 
