@@ -2,8 +2,8 @@
 
 Scala:
 
-- [1.0 Why Functional? Why Scala? Functional and OO](README.md#Section1.1-Why-Scala)
-- [1.2 Functions & Evaluation](README.md#1.2-Getting-Started)
+- [1.0 Why Functional? Why Scala? Functional and OO](README.md#section1.1---why-scala)
+- [1.2 Functions & Evaluation](README.md#1.2-getting-started)
   - Referential integrity, pure functions, indempotence, uniform access principle
   - functional vs. imperative
   - Hallmark funcrtional features  
@@ -42,10 +42,10 @@ Scala:
   - Match as a switch
   - [monads](* [Using monads in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534), monoids
 - [2.6 - Abstractions for concurrency](README.md#Abstractions-for-concurrency)
-  - [futures/promises](README.md#Futures-and-Promises)
+  - [futures/promises](README.md#futures-and-promises)
   - semaphores, actors, etc
-- [Testing](README.md#2.7-Testing---Scalatest-and-Specs)
-- [sbt](README.md#Using-SBT)
+- [Testing](README.md#2.7-Testing---scalatest-and-specs)
+- [sbt](README.md#using-sbt)
 
 Play:
 
