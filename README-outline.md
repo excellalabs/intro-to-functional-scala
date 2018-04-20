@@ -3,7 +3,7 @@
 Scala:
 
 - [1.0 Why Functional? Why Scala? Functional and OO](README.md#Section1.1-Why-Scala)
-- 1.2 Functions & Evaluation
+- [1.2 Functions & Evaluation](README.md#1.2-Getting-Started)
   - Referential integrity, pure functions, indempotence, uniform access principle
   - functional vs. imperative
   - Hallmark funcrtional features  
@@ -11,32 +11,28 @@ Scala:
     - Closures
     - Currying
   - anonymous functions    
-  - expressions (vs statements), evaluation, functional loops with and without fors, function structure, final variables, string interpolation, mutable collectors & operations
+  - expressions (vs statements), evaluation, functional loops with and without fors, function structure, final variables, string interpolation, mutable collectors & operations, [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
   1.3 [Functional Data Structures](https://www.scala-exercises.org/fp_in_scala/functional_data_structures)
-  - 1.4
-    - [Why do we need monads?](https://stackoverflow.com/questions/28139259/why-do-we-need-monads/28139260#28139260)
-
-  
-  - [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
-
-- 2.0 Scala Intro
+- [1.4 Exceptions without Errors](README.md#1.4-Exceptions-without-errors)
+  - [Why do we need monads?](https://stackoverflow.com/questions/28139259/why-do-we-need-monads/28139260#28139260)
+- [2.1 Scala Intro](README.md#Section-2.1---Intro)
   - Object-oriented meets functional
   - Syntactically concise
   - Pure objected-oriented
   - Have opererator overloading
   - can be use in compiled or interpreted mode, compiles to bytecoder (and interoperable with Java) or JavaSxript, interpreted in tools like a REPL
-
-  - functions vs methods 
-
-- Object orientation
+- [2.4 Object orientation](README.md#2.5.1-Object-Orientation)
+  - functions vs objects (functions are objects)
+  (https://docs.scala-lang.org/tour/traits.html), generics, subtyping, variance, etc.
+  - functions vs methods
   - [traits](https://docs.scala-lang.org/tour/traits.html)
   - classes in hierarchies; hierarchy of standard Scala types; polymorphism
   - organize classes and traits into packages
   - [case classes](https://docs.scala-lang.org/tour/case-classes.html)
   - implicit classes
-- [Types](https://docs.scala-lang.org/tour/unified-types.html) and [Pattern Matching](https://docs.scala-lang.org/tour/pattern-matching.html)
-  - functions vs objects (functions are objects)
-  - Scala [type system](https://docs.scala-lang.org/tour/traits.html) details - [unified types](https://docs.scala-lang.org/tour/traits.html), generics, subtyping, variance, etc.
+  - [DI in Scala](https://di-in-scala.github.io/)
+- [2.4.2 Polymorphism and Types](README.md#2.4.2-Polymorphism-and-types)
+- [2.5 Pattern Matching](README.md#2.5-Pattern-Matching)
   - collections data structure
   - pattern matching
   - [for comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
@@ -45,11 +41,11 @@ Scala:
   - [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type for representing optional values instead of null, so forces the compiler to deal with it
   - Match as a switch
   - [monads](* [Using monads in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534), monoids
-- Abstractions for concurrency
+- [2.6 - Abstractions for concurrency](README.md#Abstractions-for-concurrency)
   - [futures/promises](README.md#Futures-and-Promises)
   - semaphores, actors, etc
+- [Testing](README.md#2.7-Testing---Scalatest-and-Specs)
 - [sbt](README.md#Using-SBT)
-- [DI in Scala](https://di-in-scala.github.io/)
 
 Play:
 

@@ -11,9 +11,10 @@
 - 2.0 Scala
   - 2.1 Intro
   - 2.2 Using Collections
-  - 2.3 Pattern matching
-  - 2.4 Composing functions
-  - 2.5 Polymorphism and types
+  - 2.3 Composing functions
+  - 2.4 Object Orientation
+  - 2.4.2 Polymorphism and types
+  - 2.5 Pattern matching
   - 2.6 Type Classes
   - 2.6 Concurrency
   - 2.7 Testing - Scalatest and Specs
@@ -117,13 +118,17 @@ We don't like "impure functions": functions that yield different output for same
 
 ## Chapter 2 - Scala
 
-### Section 2. 1 - Intro
+### Section 2.1 - Intro
 
-### Section 2. 2 - Using collections
+### Section 2.2 - Using collections
 
 Sequence comprehensions - syntatic construct for creating a list based on existing lists. `For comprehensions` can enumerate and filter.
 
-### Section 2. 3 - Pattern matching
+### Section 2.4 - Composing functions
+
+### Section 2.3 - [Polymorphism and types](https://docs.scala-lang.org/tour/unified-types.html)
+
+### Section 2.5 - Pattern matching
 
 For those not familiar with pattern matching, think of it as an eloquent, more advanced/useful switch statement. Pattern matching can be used to match more than just primitives. Pattern matching can match on custom types and can even extract from tuples or case classes. In a basic example below, we created the case class "Player", which consists of two fields: a number, and the player name. We created an instance of that class and matched on cases where the player's number is 20 and print the name.
 
@@ -152,13 +157,9 @@ This is a basic introduction of Pattern Matching in Scala. For more information,
 
 [https://docs.scala-lang.org/tour/pattern-matching.html](https://docs.scala-lang.org/tour/pattern-matching.html)
 
-### Section 2. 4 - Composing functions
-
-### Section 2. 5 - Polymorphism and types
-
 ### Section 2.6  - Type Classes
 
-Type Classes are  constructs that allow us to add ad-hoc polymorphism. Type Classes are not a native construct and are not obviously recongnizable but you might have worked with them.
+Type Classes are constructs that allow us to add ad-hoc polymorphism. Type Classes are not a native construct and are not obviously recongnizable but you might have worked with them.
 
 A Type Class is a group of classes that satisfy a contract provided by a trait. Type Classes allow us to add functionality to an existing class without modifying it. Type Classes in scala are composed of three parts
 * The type class
@@ -333,9 +334,9 @@ A promise is similar to a future but is writable (CompletableFuture), so can be 
 
 More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/overviews/core/futures.html)
 
-### Section 2. 7 - Testing: Scalatest and Specs
+### Section 2.7 - Testing: Scalatest and Specs
 
-### Section 2. 8 - Using SBT
+### Section 2.8 - Using SBT
 
 #### What is SBT?
 
