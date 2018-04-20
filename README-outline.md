@@ -7,7 +7,6 @@
 
 Scala:
 
-- [1.0 Why Functional? Why Scala? Functional and OO](README.md#section-11---why-scala)
 - [1.2 Functions & Evaluation](README.md#12-getting-started)
   - Referential integrity, pure functions, indempotence, uniform access principle
   - functional vs. imperative
