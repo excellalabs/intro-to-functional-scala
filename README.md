@@ -6,8 +6,8 @@ Intro to Functional Scala outline:
 
 - [0.1 Key Concepts](README-outline.md)
 - 1.0 Functional Programming
-  - [1.1 Why Functional? Why Scala?](#section-11---why-scala)
-  - 1.2 Getting Started with Functional
+  - [1.1 Why Functional and Scala?](#section-11---why-functional-and-scala)
+  - [1.2 Getting Started with Functional](#section-12---getting-started-with-functional)
   - 1.3 Functional Data Structures
   - 1.4 Exceptions without Errors
   - 1.5 Handling State
@@ -31,7 +31,7 @@ Intro to Functional Scala outline:
 
 ## Chapter 1 - Functional programming
 
-### Section 1.1 - Why Scala
+### Section 1.1 - Why functional and Scala
 
 What is functional programming & Scala & why use them?
 
