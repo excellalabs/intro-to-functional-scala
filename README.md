@@ -29,7 +29,7 @@ Intro to Functional Scala outline:
   - With Web Sockets
   - With DI
 
-## Chapter 1 - Functional programming
+## Chapter 1
 
 ### Section 1.1 - Why functional and Scala
 
