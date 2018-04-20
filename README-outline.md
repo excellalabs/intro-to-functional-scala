@@ -44,7 +44,7 @@ Scala:
   - tuples - like a list but fixed in size and can hold objects with different types. They can be used to return multiple values at once, and are also useful to pass a list of data values as messages between actors in concurrent programming.
   - [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type for representing optional values instead of null, so forces the compiler to deal with it
   - Match as a switch
-  - [monads](* [Using monads in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534), monoids
+  - [monads](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534), monoids
 - [2.6 - Abstractions for concurrency](README.md#section-26---concurrency)
   - [futures/promises](README.md#futures-and-promises)
   - semaphores, actors, etc
