@@ -133,6 +133,8 @@ Sequence comprehensions - syntatic construct for creating a list based on existi
 
 ### Section 2.3 - [Polymorphism and types](https://docs.scala-lang.org/tour/unified-types.html)
 
+### Section 2.4 - Object orientation
+
 ### Section 2.5 - Pattern matching
 
 For those not familiar with pattern matching, think of it as an eloquent, more advanced/useful switch statement. Pattern matching can be used to match more than just primitives. Pattern matching can match on custom types and can even extract from tuples or case classes. In a basic example below, we created the case class "Player", which consists of two fields: a number, and the player name. We created an instance of that class and matched on cases where the player's number is 20 and print the name.
