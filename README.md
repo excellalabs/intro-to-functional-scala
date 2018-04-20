@@ -35,7 +35,9 @@ Intro to Functional Scala outline:
 
 What is functional programming & Scala & why use them?
 
-Functional programming treats computation as the evaluation of functions and **avoids changing state and mutable data**. It's declarative, using expressions over statements. The **output of a function depends only on the input**, always yielding the same results if called multiple times with the same input (**pure function**). This is in contrast to functions that depend on local or global state, which could have different results each time called **depending on current state** (lacking **referential transparency**), and can have **side effects** which are changes in state that don't depend on the inputs. Thus functional programming can make **much easier to understand and predict the behavior** of an application.
+Functional programming treats computation as the evaluation of functions and **avoids changing state and mutable data**. 
+
+It's declarative, using expressions over statements. The **output of a function depends only on the input**, always yielding the same results if called multiple times with the same input (**pure function**). This is in contrast to functions that depend on local or global state, which could have different results each time called **depending on current state** (lacking **referential transparency**), and can have **side effects** which are changes in state that don't depend on the inputs. Thus functional programming can make **much easier to understand and predict the behavior** of an application.
 
 - Indempotence - a property of a function that says you can apply it many times and get the same result
 - Uniform access principle - object.field and object.method have the smae syntax (i.e. vs Java where it's object.field and object.method()). Scala best practice says you shouldn't care if dealing with an Option or collection, because all of them can be treated equally in most situations using common higher order functions like `.map, .foreach, .flatMap, .filter, .isEmpty, etc`.
