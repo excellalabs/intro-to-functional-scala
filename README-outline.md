@@ -2,24 +2,25 @@
 
 Scala:
 
-- Why Functional? Why Scala? Functional and OO.
-- Functions & Evaluation
+- [1.0 Why Functional? Why Scala? Functional and OO](README.md#Section1.1-Why-Scala)
+- 1.2 Functions & Evaluation
   - functional vs. imperative
-  - expressions, evaluation, functional loops, function structure, final variables, string interpolation, loops with & without for, arrays, mutable collectors & operations, classes
-  - sequence comprehensions, comnbinators
+  - expressions, evaluation, functional loops, function structure, final variables, string interpolation, loops with & without for, arrays, mutable collectors & operations, classes, functions vs. methods
+  - [Why do we need monads?](https://stackoverflow.com/questions/28139259/why-do-we-need-monads/28139260#28139260)
+
+  
+  - sequence comprehensions, comnbinators  
   - anonymous functions
   - [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
-  - [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type to represent value that may be present or not forcing you to not rely on a value that may be absent
 - Higher Order Functions
   - functions as first class values
-  - Scala syntax and how it's formally defined
-  - methods, classes, data abstraction thru design of data structures
+  - data abstraction thru design of data structures
   - currying
 - Data abstraction & object orientation
   - [traits](https://docs.scala-lang.org/tour/traits.html)
   - classes in hierarchies; hierarchy of standard Scala types; polymorphism
   - organize classes and traits into packages
-  - case classes
+  - [case classes](https://docs.scala-lang.org/tour/case-classes.html)
   - implicit classes
 - [Types](https://docs.scala-lang.org/tour/unified-types.html) and [Pattern Matching](https://docs.scala-lang.org/tour/pattern-matching.html)
   - functions vs objects (functions are objects)

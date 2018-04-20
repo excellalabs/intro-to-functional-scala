@@ -1,12 +1,39 @@
 # intro-to-functional-scala
 
-* [Curriculum Outline](README-outline.md)
+[Curriculum Outline](README-outline.md)
+
+- 1.0 Functional Programming
+  - 1.1 Why Scala
+  - 1.2 Getting Started
+  - 1.3 Data Structures
+  - 1.4 Exceptions without Errors
+  - 1.5 Handling State
+- 2.0 Scala Intro
+  - 2.2 Using Collections
+  - 2.3 Pattern matching
+  - 2.4 Composing functions
+  - 2.5 Polymorphism and types
+  - 2.6 Type Classes
+  - 2.6 Concurrency
+  - 2.7 Testing - Scalatest and Specs
+  - 2.8 sbt
+- 3.0 Play
+  - With React
+  - With Slick
+  - With SSE
+  - With Web Sockets
+  - With DI
 
 ## Chapter 1 - Functional programming
 
-### Section 1.1 - What is functional programming & Scala & why use them?
+### Section 1.1 - Why Scala
+
+What is functional programming & Scala & why use them?
 
 Functional programming treats computation as the evaluation of functions and **avoids changing state and mutable data**. It's declarative, using expressions over statements. The **output of a function depends only on the input**, always yielding the same results if called multiple times with the same input (**pure function**). This is in contrast to functions that depend on local or global state, which could have different results each time called **depending on current state** (lacking **referential transparency**), and can have **side effects** which are changes in state that don't depend on the inputs. Thus functional programming can make **much easier to understand and predict the behavior** of an application.
+
+- Uniform access principle
+- Indempotence
 
 **What makes Scala functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class.
 
@@ -56,6 +83,30 @@ It's easy to add new language constructs in the form of libraries which makes cr
 ### Section 1.3 - Data Structures
 
 ### Section 1.4 - Exceptions without Errors
+
+Some functions might fail (i.e. g(2,0), divide by 0). We have no "exceptions" in functional programming (an exception is not a function). How do we solve it?
+
+Solution: Let's allow functions to return two kind of things: instead of having g : Real,Real -> Real (function from two reals into a real), let's allow g : Real,Real -> Real | Nothing (function from two reals into (real or nothing)).
+
+But functions should (to be simpler) return only one thing.
+
+Solution: let's create a new type of data to be returned, a "boxing type" that encloses maybe a real or be simply nothing. Hence, we can have g : Real,Real -> Maybe Real. OK, but ...
+
+What happens now to f(g(x,y))? f is not ready to consume a Maybe Real. And, we don't want to change every function we could connect with g to consume a Maybe Real.
+
+Solution: let's have a special function to "connect"/"compose"/"link" functions. That way, we can, behind the scenes, adapt the output of one function to feed the following one.
+
+In our case:  g >>= f (connect/compose g to f). We want >>= to get g's output, inspect it and, in case it is Nothing just don't call f and return Nothing; or on the contrary, extract the boxed Real and feed f with it. (This algorithm is just the implementation of >>= for the Maybe type). Also note that >>= must be written only once per "boxing type" (different box, different adapting algorithm).
+
+Many other problems arise which can be solved using this same pattern: 1. Use a "box" to codify/store different meanings/values, and have functions like g that return those "boxed values". 2. Have a composer/linker g >>= f to help connecting g's output to f's input, so we don't have to change any f at all.
+
+Remarkable problems that can be solved using this technique are:
+
+having a global state that every function in the sequence of functions ("the program") can share: solution StateMonad.
+
+We don't like "impure functions": functions that yield different output for same input. Therefore, let's mark those functions, making them to return a tagged/boxed value: IO monad.
+
+*FROM: [Why do we need monads?](https://stackoverflow.com/questions/28139259/why-do-we-need-monads/28139260#28139260)
 
 ### Section 1.5 - Handling state
 
