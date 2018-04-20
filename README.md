@@ -157,7 +157,7 @@ This is a basic introduction of Pattern Matching in Scala. For more information,
 
 [https://docs.scala-lang.org/tour/pattern-matching.html](https://docs.scala-lang.org/tour/pattern-matching.html)
 
-### Section 2.6  - Type Classes
+### Section 2.6 - Type Classes
 
 Type Classes are constructs that allow us to add ad-hoc polymorphism. Type Classes are not a native construct and are not obviously recongnizable but you might have worked with them.
 
