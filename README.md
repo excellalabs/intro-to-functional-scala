@@ -15,10 +15,10 @@
   - 2.4 Object Orientation
   - 2.4.2 Polymorphism and types
   - [2.5 Pattern matching](README.md#section-25---pattern-matching)
-  - [2.6 Type Classesy](README.md#section-26---type-classes)
-  - [2.7 Concurrency](README.md#section-26---concurrency)
+  - [2.6 Type Classes](README.md#section-26---type-classes)
+  - [2.7 Concurrency](README.md#section-27---concurrency)
   - 2.8 Testing - Scalatest and Specs
-  - 2.9 sbt
+  - [2.9 sbt](readme.md#section-29---using-sbt)
 - 3.0 Play
   - With React
   - With Slick
@@ -235,7 +235,7 @@ scala> Person("Homer", "742 Evergreen Terrace").toJson
 res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Evergreen Terrace)))
 ```
 
-### Section 2.6 - Concurrency
+### Section 2.7 - Concurrency
 
 #### Futures and Promises
 
