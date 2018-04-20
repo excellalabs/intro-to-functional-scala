@@ -1,3 +1,8 @@
+# Scala Curriculum I Guide
+
+1. Review the key concepts below
+1. Follow the curriculim of learning resources below, including our primer, [Intro to Functional Scala](README.md)
+
 ## Key Concepts
 
 Scala:
