@@ -2,13 +2,13 @@
 
 [Curriculum Outline](README-outline.md)
 
-- [1.0 Functional Programming](README.md#section-11---why-scala)
-  - [1.1 Why Functional? Why Scala?](section-11---why-scala)
+- 1.0 Functional Programming
+  - [1.1 Why Functional? Why Scala?](#section-11---why-scala)
   - 1.2 Getting Started with Functional
   - 1.3 Data Structures
   - 1.4 Exceptions without Errors
   - 1.5 Handling State
-- [2.0 Scala](README.md#chapter-2-scala)
+- 2.0 Scala
   - 2.1 Intro
   - 2.2 Using Collections
   - 2.3 Composing functions
@@ -19,7 +19,7 @@
   - [2.7 Concurrency](README.md#section-26---concurrency)
   - 2.8 Testing - Scalatest and Specs
   - 2.9 sbt
-- [3.0 Play](README.md#play)
+- 3.0 Play
   - With React
   - With Slick
   - With SSE
