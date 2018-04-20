@@ -2,6 +2,8 @@
 
 [Curriculum Outline](README-outline.md)
 
+Intro to Functional Scala outline:
+
 - 1.0 Functional Programming
   - [1.1 Why Functional? Why Scala?](#section-11---why-scala)
   - 1.2 Getting Started with Functional
