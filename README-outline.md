@@ -92,7 +92,7 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 1. JVM necessities: how the JVM works, garbage collection, commands, tools, whats new in the JDK, etc.
 1. [Tour of Scala - Scala Docs](https://docs.scala-lang.org/tour/tour-of-scala.html) - bite-sized introductions to the most-used features of Scala
 1. [Fundamentals First (video)](https://www.youtube.com/watch?v=ugHsIj60VfQ)
-1. [This Guide](README.md)
+1. [Our guide, Intro to Functional Scala](README.md)
 1. Scala exercises:
     1. [Scala exercises - exercise concepts](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
     1. [Excerism.io - katas](hhttp://exercism.io/languages/scala/exercises)
