@@ -36,15 +36,15 @@ Functional programming treats computation as the evaluation of functions and **a
 - Indempotence - a property of a function that says you can apply it many times and get the same result
 - Uniform access principle - object.field and object.method have the smae syntax (i.e. vs Java where it's object.field and object.method()). Scala best practice says you shouldn't care if dealing with an Option or collection, because all of them can be treated equally in most situations using common higher order functions like `.map, .foreach, .flatMap, .filter, .isEmpty, etc`.
 
-**What makes Scala functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class.
+**What makes Scala functional?** [Every function is a value](https://docs.scala-lang.org/tour/unified-types.html) with support for anonymous functions, higher-order functions, allows [functions to be nested](https://docs.scala-lang.org/tour/nested-functions.html), and supports currying. Functions are first-class values in Scala. There are [case classes](https://docs.scala-lang.org/tour/case-classes.html) and built-in support for [pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) model algebraic types. Singleton objects provide a convenient way to group functions that aren't members of a class. Lends itself to concurrency, mapping, reducing, applying lambda functions.
 
 [Anonymous functions](https://dzone.com/articles/scala-higher-order-and-anonymous-functions) - using a function where it's declared as opposed to declaring it somewhere else first
 
-[Higher-order functions](https://docs.scala-lang.org/tour/higher-order-functions.html) - take other functions as parameters or return a function.  `map` is a common example. Functions passed as arguments are `callback functions`.
+[Higher-order functions](https://docs.scala-lang.org/tour/higher-order-functions.html) - take other functions as parameters or return a function.  `map` is a common example. Functions passed as arguments are `callback functions`. Works not only on lists but other types of containers like futures.
+
+Closures - functions that carry around their scope; lets you ship code around, i.e. around nodes in a cluster
 
 [Currying](https://docs.scala-lang.org/tour/multiple-parameter-lists.html) - when a method is called with a fewer number of parameter lists than it defined, yielding a function taking the missing parameter lists as its arguments
-
-[Case classes](https://docs.scala-lang.org/tour/case-classes.html) - like regular classes that have an apply method by default that takes care of object construction, and are compared by structure, not reference. They are good for modeling immutable data. They are declared with the `case class` keyword, new is not used, and parameter(s) are passed.
 
 [Pattern matching](https://docs.scala-lang.org/tour/pattern-matching.html) - a mechanism for checking a value against a pattern. A match can deconstruct the value into parts. More powerful than `switch` and can be used in place of if/else collections.
 
@@ -56,7 +56,9 @@ Functional programming treats computation as the evaluation of functions and **a
 
 [Traits](https://docs.scala-lang.org/tour/traits.html) - for sharing interfaces and fields betweemn classes (like Java 8 interfaces). Can be extended by classes and objects but cannot be instantiated so have no parameters.
 
-[Mixin-based composition](https://docs.scala-lang.org/tour/mixin-class-composition.html) - traits used to compose a class
+[Case classes](https://docs.scala-lang.org/tour/case-classes.html) - like regular classes that have an apply method by default that takes care of object construction, and are compared by structure, not reference. They are good for modeling immutable data.
+
+[Mixin-based composition](https://docs.scala-lang.org/tour/mixin-class-composition.html) - traits used
 
 **Scala is statically typed** and has the following features:
 
@@ -81,7 +83,9 @@ It's easy to add new language constructs in the form of libraries which makes cr
 * [Basics of Scala functions](http://fruzenshtein.com/scala-introduction-to-functions/)
 * [SBT](sbt)
 
-### Section 1.3 - Data Structures
+### Section 1.3 - Functional Data Structures
+
+[Functional Data Structures](https://www.scala-exercises.org/fp_in_scala/functional_data_structures)
 
 ### Section 1.4 - Exceptions without Errors
 

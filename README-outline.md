@@ -3,34 +3,32 @@
 Scala:
 
 - [1.0 Why Functional? Why Scala? Functional and OO](README.md#Section1.1-Why-Scala)
-  - Lends itself to concurrency, mapping, reducing, applying lambda functions
 - 1.2 Functions & Evaluation
   - Referential integrity, pure functions, indempotence, uniform access principle
   - functional vs. imperative
-  
-  - expressions (vs statements), evaluation, 
-
   - Hallmark funcrtional features  
-    - Higher Order Functions, functions as first class values
+    - Higher Order Functions, functions as first class values, sequence comprehensions, comnbinators  
     - Closures
-    - currying
-
-  - functional loops with and without fors, function structure, final variables, string interpolation, mutable collectors & operations
-
-  - data abstraction thru design of data structures
-
+    - Currying
+  - anonymous functions    
+  - expressions (vs statements), evaluation, functional loops with and without fors, function structure, final variables, string interpolation, mutable collectors & operations
+  1.3 [Functional Data Structures](https://www.scala-exercises.org/fp_in_scala/functional_data_structures)
   - 1.4
     - [Why do we need monads?](https://stackoverflow.com/questions/28139259/why-do-we-need-monads/28139260#28139260)
 
-  - sequence comprehensions, comnbinators  
   
-  - anonymous functions
   - [tail recursion](https://www.scala-exercises.org/scala_tutorial/tail_recursion)
 
 - 2.0 Scala Intro
-- functions vs methods 
+  - Object-oriented meets functional
+  - Syntactically concise
+  - Pure objected-oriented
+  - Have opererator overloading
+  - can be use in compiled or interpreted mode, compiles to bytecoder (and interoperable with Java) or JavaSxript, interpreted in tools like a REPL
 
-- Data abstraction & object orientation
+  - functions vs methods 
+
+- Object orientation
   - [traits](https://docs.scala-lang.org/tour/traits.html)
   - classes in hierarchies; hierarchy of standard Scala types; polymorphism
   - organize classes and traits into packages
