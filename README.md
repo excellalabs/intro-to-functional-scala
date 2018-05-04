@@ -339,17 +339,235 @@ res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Everg
 
 ### Section 2.7 - Concurrency
 
+Scala's approach makes it much easier to reason about concurrency and write well-behaving programs than lower-level APIs you often see in other languages. The two cornerstones to concurrency in Scala are `Futures` and `Actors`. 
+
 #### Futures and Promises
 
 ##### Futures
 
-###### Quick Start
+A future is a placeholder object for a value that may not exist yet becuase of an async operation that hasn't yet completed. Threads cooperate, via a future. The Future will eventually contain either the result or an exception in its monad.
 
-* threads cooperating, via a future
+* Callbacks populate the future with the actual value when it's ready. 
+* The execution to get said value happens in an `ExecutionContext` - similar to an `Executor`, it can execute computations in a new, pooled or the current (discouraged) thread. 
+* Futures are completed when they get the value back from the computation, whether that's the expected value or an exception thrown from it, and that result is immuatable. They are generally for async operations but can block when necessary.
 
-- Futures provide a great at interface for client (main thread), but less good for what producer of a result could do. Own implementation needed.
+`Future[T]` is a type which denotes future objects, whereas `Future.apply` is a method which creates and schedules an asynchronous computation, and then returns a future object which will be completed with the result of that computation.
 
-Scala, when creating task, an additional abstraction provides mediation b/t client and server (like Java 8 completeable futures, influenced by Scala's attempt to create their own)
+EXAMPLE: Let’s assume that we want to use a hypothetical API of some popular stock service to get stock quotes and buy if a good deal. We will open a new connection and send a request to obtain a list:
+
+It is made async with a future, and the following lines handle the results, however this way is not ideal which we will explore next:
+
+```scala
+import scala.concurrent._
+import ExecutionContext.Implicits.global
+
+val connection = ...
+
+val rateQuote = Future {
+  connection.getCurrentValue(USD)
+}
+
+rateQuote onSuccess { case quote =>
+  val purchase = Future {
+    if (isProfitable(quote)) connection.buy(amount, quote)
+    else throw new Exception("not profitable")
+  }
+
+  purchase onSuccess {
+    case _ => println("Purchased " + amount + " USD")
+  }
+  case Failure(t) => println("An error has occured: " + t.getMessage)
+}
+```
+
+* Importing `scala.concurrent` brings in `Future` and the 2nd import brings in the default execution context.
+
+##### Mapping Futures
+
+The problems with this approach are 
+* nested callbacks are required when doing a subsequent action in the onComplete of the first
+* operation & result is limited within that scope. 
+
+For these reasons, futures provide **combinators** such as `map`, which allow a more straightforward composition. `map` will produce a new future with the value mapped from the original when it's completed (not dissimilar to mapping collections).
+
+The above can be done using `map` to eliminate the nesting and one onSuccess callback:
+
+```scala
+val rateQuote = Future {
+  connection.getCurrentValue(USD)
+}
+
+val purchase = rateQuote map { quote =>
+  if (isProfitable(quote)) connection.buy(amount, quote)
+  else throw new Exception("not profitable")
+}
+
+purchase onSuccess {
+  case _ => println("Purchased " + amount + " USD")
+}
+```
+
+##### Combinators on Futures
+
+Exceptions: 
+* If the mapping function throws an exception the future is completed with that exception
+* If the original future fails with an exception then the returned future also contains the same exception 
+
+This exception propagating semantics is present in the rest of the combinators, as well. They are designed to work with `for-comprehensions` also, so futures contain `flatMap`, `filter` and `foreach` combinators.
+
+`flatMap` is not typically used outside of `for-comprehensions`, and `filter` creates a new future with the original's value only if it satisfies some predicate, else failing with a `NoSuchElementException`.
+
+Usually you'd want to use a `for-comprehension` over a `flatMap` because it **reads cleaner**:
+
+```scala
+val acceptable: Future[Boolean] = for {
+  heatedWater <- heatWater(Water(25))
+  okay <- temperatureOkay(heatedWater)
+} yield okay
+```
+
+If you have multiple computations you can create the Future outside of the for-comprehension. However, this is just like nested flatMap calls, which will run sequentially:
+
+```scala
+def prepareCappuccinoSequentially(): Future[Cappuccino] = {
+  for {
+    ground <- grind("arabica beans")
+    water <- heatWater(Water(20))
+    foam <- frothMilk("milk")
+    espresso <- brew(ground, water)
+  } yield combine(espresso, foam)
+}
+```
+
+To run in parallel, instantiate all your independent Futures before the for-comprehension:
+
+```scala
+def prepareCappuccino(): Future[Cappuccino] = {
+  val groundCoffee = grind("arabica beans")
+  val heatedWater = heatWater(Water(20))
+  val frothedMilk = frothMilk("milk")
+  for {
+    ground <- groundCoffee
+    water <- heatedWater
+    foam <- frothedMilk
+    espresso <- brew(ground, water)
+  } yield combine(espresso, foam)
+}
+```
+
+It is non-deterministic which what order the 3 futures will run, though it is guaranteed brew will run last.
+
+##### Exception combinators
+
+Combinators to handle future exceptions include `recover`, which maps the exception to a new future's value. `recoverWith` is available and is similar to how `map` relates to `flatMap`. 
+
+`fallbackTo` will try to populate a new future with the value of a fallback function given the first threw an exception. For example:
+
+```scala
+val usdQuote = Future {
+  connection.getCurrentValue(USD)
+} map {
+  usd => "Value: " + usd + "$"
+}
+val chfQuote = Future {
+  connection.getCurrentValue(CHF)
+} map {
+  chf => "Value: " + chf + "CHF"
+}
+
+val anyQuote = usdQuote fallbackTo chfQuote
+
+anyQuote onSuccess { println(_) }
+```
+
+`andThen` can be used just for side effect purposes, and can be chained and executed in order, essentially creating a new future as a copy of the original.
+
+Projections can be used to enable for-comprehensions on a result returned as an exception.
+
+Combinators are purely functional - they each return a new future which is related to the one it was derived form.
+
+##### Promises
+
+A promise is similar to a future but is writable (CompletableFuture), so can be kept by the issuer explicitly as it has a public setter. It's a way for other parts of the program to put a value in the Future.
+
+Where Future provides an interface exclusively for querying, Promise is a companion type that allows you to complete a Future by putting a value into it exactly once. It cannot be changed after it completes.
+
+A Promise instance is always linked to exactly one Future. There is obviously no way to complete a Future other than through a Promise – the apply method on Future is just a nice helper function that shields you from this.
+
+When talking about promises that may be fulfilled or not, an obvious example domain is that of politicians, elections, campaign pledges, and legislative periods.
+
+Suppose the politicians that then got elected into office promised their voters a tax cut. This can be represented as a Promise[TaxCut], which you can create by calling the apply method on the Promise companion object, like so:
+
+```scala
+import concurrent.Promise
+case class TaxCut(reduction: Int)
+// either give the type as a type parameter to the factory method:
+val taxcut = Promise[TaxCut]()
+// or give the compiler a hint by specifying the type of your val:
+val taxcut2: Promise[TaxCut] = Promise()
+```
+
+Once you have created a Promise, you can get the Future belonging to it by calling the future method on the Promise instance:
+
+```scala
+val taxcutF: Future[TaxCut] = taxcut.future
+```
+
+The returned Future might not be the same object as the Promise, but calling the future method of a Promise multiple times will definitely always return the same object to make sure the one-to-one relationship between a Promise and its Future is preserved.
+
+**Completing a promise**
+
+In Scala, you can complete a Promise either with a success or a failure:
+
+```taxcut.success(TaxCut(20))```
+
+Once you have done this, 
+* that Promise instance is no longer writable, and future attempts to do so will lead to an exception
+* completing your Promise leads to the completion of the associated Future
+* Any success or completion handlers on that future will now be called, or the mapping functions if you are mapping it
+* Usually, the completion of the Promise and the processing of the completed Future will not happen in the same thread. It’s more likely that you create your Promise, start computing its value in another thread and immediately return the uncompleted Future to the caller.
+
+**Failure**
+
+If that happens, you can still complete your Promise instance gracefully, by calling its failure method and passing it an exception:
+
+```scala
+case class LameExcuse(msg: String) extends Exception(msg)
+object Government {
+  def redeemCampaignPledge(): Future[TaxCut] = {
+       val p = Promise[TaxCut]()
+       Future {
+         println("Starting the new legislative period.")
+         Thread.sleep(2000)
+         p.failure(LameExcuse("global economy crisis"))
+         println("We didn't fulfill our promises, but surely they'll understand.")
+       }
+       p.future
+     }
+}
+```
+
+* If you already have a Try, you can also complete a Promise by calling its complete method
+
+##### Conclusion
+
+* You should design your application with concurrency from the ground up, 
+  * your functions in all your application layers are asynchronous 
+  * return futures
+
+A likely use case these days is that of developing a web application. If you are using a modern Scala web framework, it will allow you to return your responses as something like a Future[Response] instead of blocking and then returning your finished Response. This is important since it allows your web server to handle a huge number of open connections with a relatively low number of threads. By always giving your web server Future[Response], you maximize the utilization of the web server’s dedicated thread pool.
+
+A service in your application might make multiple calls to your database layer and/or some external web service, receiving multiple futures, and then compose them to return a new Future
+
+3 different cases to consider:
+
+* Non-blocking IO
+* Blocking IO
+* Long running computations - no IO, CPU-bound. They shouldn't be executed in the web server thread either so turn into Futures and thus in a separate ExecutionContext.
+
+More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/overviews/core/futures.html)
+
+##### EXERCISE
 
 // EXERCISE: Scala implements them:
 // Import that scala.concurrent package
@@ -393,101 +611,6 @@ val f3 = f1.filter(n => n > 20)
 // Often used with for comprehensions by using with a Promise. All Futures have a Promise associated.
 // Workign with Promises is more flexible. Can register multiple callbacks. Object between producer and consumer.
 // Promises are write only, Futures are read only
-
-
-
-A future is a placeholder object for a value that may not exist yet becuase of an async operation that hasn't yet completed. Callbacks populate the future with the actual value when it's ready. The execution to get said value happens in an `ExecutionContext` - similar to an `Executor`, it can execute computations in a new, pooled or the current (discouraged) thread. Futures are completed when they get the value back from the computation, whether that's the expected value or an exception thrown from it, and that result is immuatable. They are generally for async operations but can block when necessary.
-
-`Future[T]` is a type which denotes future objects, whereas `Future.apply` is a method which creates and schedules an asynchronous computation, and then returns a future object which will be completed with the result of that computation.
-
-EXAMPLE: Let’s assume that we want to use a hypothetical API of some popular stock service to get stock quotes and buy if a good deal. We will open a new connection and send a request to obtain a list:
-
-It is made async with a future, and the following lines handle the results, however this way is not ideal which we will explore next:
-
-```scala
-import scala.concurrent._
-import ExecutionContext.Implicits.global
-
-val connection = ...
-
-val rateQuote = Future {
-  connection.getCurrentValue(USD)
-}
-
-rateQuote onSuccess { case quote =>
-  val purchase = Future {
-    if (isProfitable(quote)) connection.buy(amount, quote)
-    else throw new Exception("not profitable")
-  }
-
-  purchase onSuccess {
-    case _ => println("Purchased " + amount + " USD")
-  }
-  case Failure(t) => println("An error has occured: " + t.getMessage)
-}
-```
-
-Importing `scala.concurrent` brings in `Future` and the 2nd import brings in the default execution context.
-
-###### Mapping
-
-The problems with this approach are nested callbacks are required when doing a subsequent action in the onComplete of the first, and that operation & result is limited within that scope. For these reasons, futures provide **combinators** such as `map`, which allow a more straightforward composition. `map` will produce a new future with the value mapped from the original when it's completed (not dissimilar to mapping collections).
-
-The above can be done using `map` to eliminate the nesting and one onSuccess callback:
-
-```scala
-val rateQuote = Future {
-  connection.getCurrentValue(USD)
-}
-
-val purchase = rateQuote map { quote =>
-  if (isProfitable(quote)) connection.buy(amount, quote)
-  else throw new Exception("not profitable")
-}
-
-purchase onSuccess {
-  case _ => println("Purchased " + amount + " USD")
-}
-```
-
-###### Combinators
-
-If the mapping function throws an exception the future is completed with that exception. If the original future fails with an exception then the returned future also contains the same exception. This exception propagating semantics is present in the rest of the combinators, as well. They are designed to work with `for-comprehensions` also, so futures contain `flatMap`, `filter` and `foreach` combinators. 
-
-`flatMap` is not typically used outside of `for-comprehensions`, and `filter` creates a new future with the original's value only if it satisfies some predicate, else failing with a `NoSuchElementException`.
-
-###### Exception combinators
-
-Combinators to handle future exceptions include `recover`, which maps the exception to a new future's value. `recoverWith` is available and is similar to how `map` relates to `flatMap`. `fallbackTo` will try to populate a new future with the value of a fallback function given the first threw an exception. For example:
-
-```scala
-val usdQuote = Future {
-  connection.getCurrentValue(USD)
-} map {
-  usd => "Value: " + usd + "$"
-}
-val chfQuote = Future {
-  connection.getCurrentValue(CHF)
-} map {
-  chf => "Value: " + chf + "CHF"
-}
-
-val anyQuote = usdQuote fallbackTo chfQuote
-
-anyQuote onSuccess { println(_) }
-```
-
-`andThen` can be used just for side effect purposes, and can be chained and executed in order, essentially creating a new future as a copy of the original.
-
-Projections can be used to enable for-comprehensions on a result returned as an exception.
-
-Combinators are purely functional - they each return a new future which is related to the one it was derived form.
-
-###### Promises
-
-A promise is similar to a future but is writable (CompletableFuture), so can be kept by the issuer explicitly as it has a public setter.
-
-More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/overviews/core/futures.html)
 
 ### Section 2.8 - Testing: Scalatest and Specs
 
