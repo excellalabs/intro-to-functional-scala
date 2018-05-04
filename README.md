@@ -37,7 +37,7 @@ What is functional programming & Scala & why use them?
 
 Functional programming treats computation as the evaluation of functions and **avoids changing state and mutable data**. 
 
-It's declarative, using expressions over statements. The **output of a function depends only on the input**, always yielding the same results if called multiple times with the same input (**pure function**). This is in contrast to functions that depend on local or global state, which could have different results each time called **depending on current state** (lacking **referential transparency**), and can have **side effects** which are changes in state that don't depend on the inputs. Thus functional programming can make **much easier to understand and predict the behavior** of an application.
+It's declarative, using expressions over statements. The **output of a function depends only on the input**, always yielding the same results if called multiple times with the same input (**pure function**). This is in contrast to functions that depend on local or global state, which could have different results each time called **depending on current state** (lacking **referential transparency**), and can have **side effects** which are changes in state that don't depend on the inputs. Thus functional programming can make **much easier to understand and predict the behavior** of an application. Functional programming can be done in other languages such as   Java, but Scala makes it significantly easier.
 
 - Indempotence - a property of a function that says you can apply it many times and get the same result
 - Uniform access principle - object.field and object.method have the smae syntax (i.e. vs Java where it's object.field and object.method()). Scala best practice says you shouldn't care if dealing with an Option or collection, because all of them can be treated equally in most situations using common higher order functions like `.map, .foreach, .flatMap, .filter, .isEmpty, etc`.
@@ -58,7 +58,7 @@ Closures - functions that carry around their scope; lets you ship code around, i
 
 [Sequence Comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html) - generally creating a list based on existing lists, but any datatype with datatype with withFilter, map, and flatMap (with the proper types) can be used.
 
-**Scala is also object-oriented**. [Every value is an object](https://docs.scala-lang.org/tour/unified-types.html) (i.e. functions represented by objects are called function values). Types and behavior of objects are described by classes and traits. Classes are extended by subclassing & a mixin-based composition mechanism as a clean replacement for multiple inheritance.
+**Scala is also object-oriented**. [Every value is an object](https://docs.scala-lang.org/tour/unified-types.html) (i.e. functions represented by objects are called function values). Types and behavior of objects are described by classes and traits. Classes are extended by subclassing & a mixin-based composition mechanism as a clean replacement for multiple inheritance. Some say Scala does OO better than Java.
 
 [Traits](https://docs.scala-lang.org/tour/traits.html) - for sharing interfaces and fields betweemn classes (like Java 8 interfaces). Can be extended by classes and objects but cannot be instantiated so have no parameters. Especially useful as generic types and with abstract methods.
 

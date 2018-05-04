@@ -11,7 +11,7 @@ Scala:
     - Referential integrity, pure functions, indempotence, uniform access principle
     - functional vs. imperative
     - Hallmark funcrtional features  
-      - Higher Order Functions, functions as first class values, sequence comprehensions, comnbinators  
+      - Higher Order Functions, functions as first class values, sequence comprehensions, yield, comnbinators
       - Closures
       - Currying
     - anonymous functions    
@@ -34,6 +34,7 @@ Scala:
   - organize classes and traits into packages
   - [case classes](https://docs.scala-lang.org/tour/case-classes.html)
   - implicit classes
+    - [Finding implicits](https://docs.scala-lang.org/tutorials/FAQ/finding-implicits.html)
   - [DI in Scala](https://di-in-scala.github.io/)
 - [2.4.2 Polymorphism and Types](README.md#242-Polymorphism-and-types)
 - [2.5 Pattern Matching](README.md#2.5-Pattern-Matching)
@@ -41,6 +42,7 @@ Scala:
   - pattern matching
   - [for comprehensions](https://docs.scala-lang.org/tour/for-comprehensions.html)
   - [map to map functions to elements, flatmap for returning in 1 list](http://www.brunton-spall.co.uk/post/2011/12/02/map-map-and-flatmap-in-scala/)
+  - fold, reduce, shift
   - tuples - like a list but fixed in size and can hold objects with different types. They can be used to return multiple values at once, and are also useful to pass a list of data values as messages between actors in concurrent programming.
   - [Option](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html) - type for representing optional values instead of null, so forces the compiler to deal with it
   - Match as a switch
@@ -89,8 +91,8 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
 
 ### 1: Preliminary Concepts & Scala Foundation
 
-1. JVM necessities: how the JVM works, garbage collection, commands, tools, whats new in the JDK, etc.
-1. [Tour of Scala - Scala Docs](https://docs.scala-lang.org/tour/tour-of-scala.html) - bite-sized introductions to the most-used features of Scala
+1. JVM necessities: how the JVM works, garbage collection, commands, tools, whats new in the JDK, etc. [Video tutorial on JVM](https://www.safaribooksonline.com/library/view/introduction-to-jvm/9781788834513/)
+1. [Video Overview of Scala from Martin Odersky, creator](https://www.youtube.com/watch?v=ecekSCX3B4Q)
 1. [Fundamentals First (video)](https://www.youtube.com/watch?v=ugHsIj60VfQ)
 1. [Our guide, Intro to Functional Scala](README.md)
 1. Scala exercises:
@@ -98,6 +100,7 @@ Open-source scalable web framework in Scala or Java (JVM), based on a lightweigh
     1. [Scala exercises - exercise concepts](https://www.scala-exercises.org/scala_tutorial/terms_and_types)
     1. [Excerism.io - katas](hhttp://exercism.io/languages/scala/exercises)
 1. [Scala for the Impatient (book)](http://fileadmin.cs.lth.se/scala/scala-impatient.pdf)
+1. [Video clips of each concept](https://www.safaribooksonline.com/library/view/practical-scala-for/9781491969472/)
 
 ### 2: Play
 
