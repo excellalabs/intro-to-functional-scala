@@ -341,7 +341,60 @@ res0: Json = JsObject(Map(name -> JsString(Homer), address -> JsString(742 Everg
 
 #### Futures and Promises
 
-##### Futures 
+##### Futures
+
+###### Quick Start
+
+* threads cooperating, via a future
+
+- Futures provide a great at interface for client (main thread), but less good for what producer of a result could do. Own implementation needed.
+
+Scala, when creating task, an additional abstraction provides mediation b/t client and server (like Java 8 completeable futures, influenced by Scala's attempt to create their own)
+
+// EXERCISE: Scala implements them:
+// Import that scala.concurrent package
+
+val f1 = Future { Thread.sleep(1000)}; 50 } // execute async
+
+// Who is going to provide the execution context?
+import scala.concurrent.ExcecutionContext.Implicits.global
+
+// Imported Implicits class. Let's compiler find a value that fits a particular need.
+// Futures need an ExecutionContext, if one exists the compiler can find it.
+// Notice it not being there didn't call a compiler error, showing the flexibility of implicits. USE SPARINGLY, beginners error to overuse them - can create very hard to maintain code that is hard to see why it works
+
+// A Future is like Option or Try, it may hold a result or an exception
+
+f1.forecah(n => n println(n))
+
+val f2 = Future { Thread.sleep(1000); 1/0 }
+
+f1.forecah(n => n println(n)) // Nothing good in here, nothing returned thus no blocking
+
+f2.value // The exception in the Futur
+
+// Future gives us 3 states - succeeded, failed, hasn't finished in a non-blocking & functional way
+
+val ff = f2.failed // Convert into Future that worked but has Throwable
+ff.foreach(n => println(n)) // prints message from exception
+
+// 
+
+
+// 
+val f2 = f1.map(n => n * 2) // returns another future
+
+// when f1 finishes, run this on result, a chain. 
+
+val f3 = f1.filter(n => n > 20)
+
+// Map & filter are good for piping
+
+// Often used with for comprehensions by using with a Promise. All Futures have a Promise associated.
+// Workign with Promises is more flexible. Can register multiple callbacks. Object between producer and consumer.
+// Promises are write only, Futures are read only
+
+
 
 A future is a placeholder object for a value that may not exist yet becuase of an async operation that hasn't yet completed. Callbacks populate the future with the actual value when it's ready. The execution to get said value happens in an `ExecutionContext` - similar to an `Executor`, it can execute computations in a new, pooled or the current (discouraged) thread. Futures are completed when they get the value back from the computation, whether that's the expected value or an exception thrown from it, and that result is immuatable. They are generally for async operations but can block when necessary.
 
