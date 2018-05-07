@@ -353,6 +353,8 @@ A future is a placeholder object for a value that may not exist yet becuase of a
 
 `Future[T]` is a type which denotes future objects, whereas `Future.apply` is a method which creates and schedules an asynchronous computation, and then returns a future object which will be completed with the result of that computation.
 
+Futures provide a great at interface for client (main thread), but less good for what producer of a result could do. Own implementation needed. Scala, when creating task, an additional abstraction provides mediation b/t client and server (like Java 8 completeable futures, influenced by Scala's attempt to create their own).
+
 EXAMPLE: Let’s assume that we want to use a hypothetical API of some popular stock service to get stock quotes and buy if a good deal. We will open a new connection and send a request to obtain a list:
 
 It is made async with a future, and the following lines handle the results, however this way is not ideal which we will explore next:
@@ -588,24 +590,30 @@ import scala.concurrent.ExecutionContext.Implicits.global
 
 // 4. A Future is like Option or Try, it may hold a result or an exception
 
-f1.forecah(n => println(n))
+f1.foreach(n => println(n))
 
 val f2 = Future { Thread.sleep(1000); 1/0 }
 
-f1.forecah(n => println(n)) // Nothing good in here, nothing returned thus no blocking
+// Nothing good in here, nothing returned thus no blocking
+f1.foreach(n => println(n))
 
-f2.value // The exception in the Futur
+// The exception in the Future
+f2.value
 
 // 5. Future gives us 3 states - succeeded, failed, hasn't finished in a non-blocking & functional way
 
-val ff = f2.failed // Convert into Future that worked but has Throwable
-ff.foreach(n => println(n)) // prints message from exception
+// Convert into Future that worked but has Throwable
+val ff = f2.failed 
 
-val f2 = f1.map(n => n * 2) // returns another future
+// prints message from exception
+ff.foreach(n => println(n))
+
+// returns another future
+val f2 = f1.map(n => n * 2) 
 
 // 6. When f1 finishes, run this on result, a chain. 
 
-val f3 = f1.filter(n => n > 20
+val f3 = f1.filter(n => n > 20)
 
 // Map & filter are good for piping
 // Often used with for comprehensions by using with a Promise.
