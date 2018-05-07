@@ -488,7 +488,9 @@ Combinators are purely functional - they each return a new future which is relat
 
 ##### Promises
 
-A promise is similar to a future but is writable (CompletableFuture), so can be kept by the issuer explicitly as it has a public setter. It's a way for other parts of the program to put a value in the Future.
+A promise is similar to a future but is writable (CompletableFuture), so can be kept by the issuer explicitly as it has a public setter. It's a way for other parts of the program to put a value in the Future. 
+
+Working with Promises is more flexible. Can register multiple callbacks. Object between producer and consumer.
 
 Where Future provides an interface exclusively for querying, Promise is a companion type that allows you to complete a Future by putting a value into it exactly once. It cannot be changed after it completes.
 
@@ -569,48 +571,44 @@ More reading: [Scala Docs - Promises & Futures](https://docs.scala-lang.org/over
 
 ##### EXERCISE
 
-// EXERCISE: Scala implements them:
-// Import that scala.concurrent package
+// 1. Import that scala.concurrent package
+import scala.concurrent.Future
 
-val f1 = Future { Thread.sleep(1000)}; 50 } // execute async
+// 2. execute async
+val f1 = Future { Thread.sleep(1000); 50 } 
 
 // Who is going to provide the execution context?
-import scala.concurrent.ExcecutionContext.Implicits.global
+import scala.concurrent.ExecutionContext.Implicits.global
+
+// 3. Try failed line again
 
 // Imported Implicits class. Let's compiler find a value that fits a particular need.
 // Futures need an ExecutionContext, if one exists the compiler can find it.
 // Notice it not being there didn't call a compiler error, showing the flexibility of implicits. USE SPARINGLY, beginners error to overuse them - can create very hard to maintain code that is hard to see why it works
 
-// A Future is like Option or Try, it may hold a result or an exception
+// 4. A Future is like Option or Try, it may hold a result or an exception
 
-f1.forecah(n => n println(n))
+f1.forecah(n => println(n))
 
 val f2 = Future { Thread.sleep(1000); 1/0 }
 
-f1.forecah(n => n println(n)) // Nothing good in here, nothing returned thus no blocking
+f1.forecah(n => println(n)) // Nothing good in here, nothing returned thus no blocking
 
 f2.value // The exception in the Futur
 
-// Future gives us 3 states - succeeded, failed, hasn't finished in a non-blocking & functional way
+// 5. Future gives us 3 states - succeeded, failed, hasn't finished in a non-blocking & functional way
 
 val ff = f2.failed // Convert into Future that worked but has Throwable
 ff.foreach(n => println(n)) // prints message from exception
 
-// 
-
-
-// 
 val f2 = f1.map(n => n * 2) // returns another future
 
-// when f1 finishes, run this on result, a chain. 
+// 6. When f1 finishes, run this on result, a chain. 
 
-val f3 = f1.filter(n => n > 20)
+val f3 = f1.filter(n => n > 20
 
 // Map & filter are good for piping
-
-// Often used with for comprehensions by using with a Promise. All Futures have a Promise associated.
-// Workign with Promises is more flexible. Can register multiple callbacks. Object between producer and consumer.
-// Promises are write only, Futures are read only
+// Often used with for comprehensions by using with a Promise.
 
 ### Section 2.8 - Testing: Scalatest and Specs
 
