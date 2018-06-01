@@ -489,15 +489,16 @@ sequentially for a good reason, and document that reason in comments.
 Here's an example of the above rules in code:
 
 ```scala
-class MyTest extends Specification { override def is = s2"""
-  add(1, 2) should equal 3 ${Add().equals3()}
-  """
+class MyTest extends PlaySpec with TestableController { // TestableController can be a base class
+  "User#getUserProfileData" should {
 
-  trait Context extends CommonImmutableSpecificationContext
+    "return success with logon ID" in new WithApplication {
+      val dummyResponse = UserResult("testFirst", "testMid", "testLast", "testAdd1", "testAdd2", "testCity", "testState",
+        "12345", "1231231234", "000", 0, 0, false, false, false, false, false, Seq(), None, "GU", false, "", 0, "SUCCESSFUL")
+      when(mockUserDAO.getUserProfileData(any())) thenReturn Future.successful(Right(dummyResponse))
+      val result: JsValue = contentAsJson(userResultWithLogonId(controller, "TEST1234"))
 
-  case class Add() extends Context {
-    def equals3 = apply {
-      add(1, 2) must beEqualTo(3)
+      resultStatus must equal(dummyResponse.returnStatus)
     }
   }
 }
