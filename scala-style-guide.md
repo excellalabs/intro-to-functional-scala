@@ -11,7 +11,7 @@ This repository contains style guidelines for writing Scala code.
 
 # Line Length
 
-* Use a maximum line length of 160 characters.
+* Use a maximum line length of 120 characters.
 
 # Names
 
