@@ -1,0 +1,18 @@
+Sample Interview Questions:
+- The Scala Programming Language
+  - What is the difference between `var`, `val`, and `def`?
+  - How are traits in scala different from interfaces in Java?
+  - What is a case class?  Explain some properties about case classes.
+  - What are the `apply` and `unapply` methods and how are they used?
+  - Explain the `implicit` keyword and how it is used in the extend my library pattern in Scala.
+  - What is the difference between `None`, `Nil`, and `Nothing`?
+  - Explain the difference between the `Option`, `Either`, and `Try` parameter classes.
+- Functional Programming
+  - What is a functor?
+  - What is a monad?
+  - What is a higher order function?  Can you demonstrate where a higher order function would be useful?
+  - What is tail recursion?  How can it be used in Scala and what benefits does it provide?
+- Reactive Programming
+  - Explain the actor model
+  - What are the benefits of using non-blocking, asynchronous I/O versus blocking, synchronous I/O operations?
+  - What is the difference between parallelism and concurrency?  How does Scala leverage both?
