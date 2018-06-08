@@ -8,8 +8,10 @@ Sample Interview Questions:
   - What is the difference between `None`, `Nil`, and `Nothing`?
   - Explain the difference between the `Option`, `Either`, and `Try` parameter classes.
 - Functional Programming
-  - What is a functor?
-  - What is a monad?
+  - What advantages/disadvantages of using immutable data structures?
+  - What is a function?
+  - Why are pure functions important?  What is referential transparency?  What are side-effects?
+  - What is a functor?  What is a monad?
   - What is a higher order function?  Can you demonstrate where a higher order function would be useful?
   - What is tail recursion?  How can it be used in Scala and what benefits does it provide?
 - Reactive Programming
