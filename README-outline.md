@@ -10,8 +10,8 @@ Scala:
   - [1.2 Getting Started](README.md#12-getting-started)
     - Referential integrity, pure functions, indempotence, uniform access principle
     - functional vs. imperative
-    - Hallmark funcrtional features  
-      - Higher Order Functions, functions as first class values, sequence comprehensions, yield, comnbinators
+    - Hallmark functional features  
+      - Higher Order Functions, functions as first class values, sequence comprehensions, yield, combinators
       - Closures
       - Currying
     - anonymous functions    
